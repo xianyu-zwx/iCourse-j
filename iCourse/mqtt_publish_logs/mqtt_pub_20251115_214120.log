@@ -1,0 +1,957 @@
+﻿[2025-11-15 21:41:20.175] [Info] === MQTT Publisher Started ===
+[2025-11-15 21:41:20.178] [Info] === Running Config ===
+[2025-11-15 21:41:20.180] [Info] Broker: 127.0.0.1:1883 | QoS: 1 | Interval: 1s
+[2025-11-15 21:41:20.182] [Info] Attendance: Enabled | FaceId: Fixed (1) | DeviceId: Fixed (1) (Format: D3)
+[2025-11-15 21:41:20.183] [Info] Environment: Enabled | Temp: 15-30鈩?| Humidity: 30-80% | CO2: 400-2000ppm
+[2025-11-15 21:41:20.184] [Info] Log: Enabled (Path: .\mqtt_publish_logs\mqtt_pub_20251115_214120.log) | Debug: Disabled
+[2025-11-15 21:41:20.186] [Info] ====================================
+
+[2025-11-15 21:41:20.189] [Info] Start sending (Press Ctrl+C to exit)...
+[2025-11-15 21:41:20.222] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242880,"visualMode":"0"}
+[2025-11-15 21:41:20.224] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242880,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:20.258] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":27.4,""humidity"":44.3,""co2"":1203,""light"":"good"}
+[2025-11-15 21:41:20.262] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":27.4,""humidity"":44.3,""co2"":1203,""light"":"good"}" -q 1
+[2025-11-15 21:41:21.304] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242881,"visualMode":"0"}
+[2025-11-15 21:41:21.307] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242881,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:21.341] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.8,""humidity"":68.1,""co2"":1962,""light"":"bad"}
+[2025-11-15 21:41:21.344] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.8,""humidity"":68.1,""co2"":1962,""light"":"bad"}" -q 1
+[2025-11-15 21:41:22.384] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242882,"visualMode":"0"}
+[2025-11-15 21:41:22.387] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242882,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:22.419] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":15.8,""humidity"":64.7,""co2"":1895,""light"":"bad"}
+[2025-11-15 21:41:22.422] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":15.8,""humidity"":64.7,""co2"":1895,""light"":"bad"}" -q 1
+[2025-11-15 21:41:23.462] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242883,"visualMode":"0"}
+[2025-11-15 21:41:23.465] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242883,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:23.524] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":15.2,""humidity"":30.3,""co2"":622,""light"":"good"}
+[2025-11-15 21:41:23.526] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":15.2,""humidity"":30.3,""co2"":622,""light"":"good"}" -q 1
+[2025-11-15 21:41:24.566] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242885,"visualMode":"0"}
+[2025-11-15 21:41:24.569] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242885,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:24.603] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":27.7,""humidity"":51,""co2"":570,""light"":"bad"}
+[2025-11-15 21:41:24.606] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":27.7,""humidity"":51,""co2"":570,""light"":"bad"}" -q 1
+[2025-11-15 21:41:25.647] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242886,"visualMode":"0"}
+[2025-11-15 21:41:25.649] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242886,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:25.681] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25.5,""humidity"":63.8,""co2"":466,""light"":"bad"}
+[2025-11-15 21:41:25.684] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25.5,""humidity"":63.8,""co2"":466,""light"":"bad"}" -q 1
+[2025-11-15 21:41:26.725] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242887,"visualMode":"0"}
+[2025-11-15 21:41:26.728] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242887,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:26.759] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":27,""humidity"":77.4,""co2"":1272,""light"":"good"}
+[2025-11-15 21:41:26.761] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":27,""humidity"":77.4,""co2"":1272,""light"":"good"}" -q 1
+[2025-11-15 21:41:27.794] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242888,"visualMode":"0"}
+[2025-11-15 21:41:27.798] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242888,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:27.828] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.7,""humidity"":39.4,""co2"":1672,""light"":"good"}
+[2025-11-15 21:41:27.831] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.7,""humidity"":39.4,""co2"":1672,""light"":"good"}" -q 1
+[2025-11-15 21:41:28.871] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242889,"visualMode":"0"}
+[2025-11-15 21:41:28.874] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242889,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:28.905] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":15.9,""humidity"":76,""co2"":930,""light"":"bad"}
+[2025-11-15 21:41:28.907] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":15.9,""humidity"":76,""co2"":930,""light"":"bad"}" -q 1
+[2025-11-15 21:41:29.944] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242890,"visualMode":"0"}
+[2025-11-15 21:41:29.947] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242890,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:29.977] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":19.3,""humidity"":56.5,""co2"":1727,""light"":"good"}
+[2025-11-15 21:41:29.979] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":19.3,""humidity"":56.5,""co2"":1727,""light"":"good"}" -q 1
+[2025-11-15 21:41:31.023] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242891,"visualMode":"0"}
+[2025-11-15 21:41:31.025] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242891,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:31.056] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.2,""humidity"":46.1,""co2"":778,""light"":"good"}
+[2025-11-15 21:41:31.059] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.2,""humidity"":46.1,""co2"":778,""light"":"good"}" -q 1
+[2025-11-15 21:41:32.098] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242892,"visualMode":"0"}
+[2025-11-15 21:41:32.101] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242892,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:32.133] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":21.9,""humidity"":34.3,""co2"":1609,""light"":"bad"}
+[2025-11-15 21:41:32.136] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":21.9,""humidity"":34.3,""co2"":1609,""light"":"bad"}" -q 1
+[2025-11-15 21:41:33.181] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242893,"visualMode":"0"}
+[2025-11-15 21:41:33.184] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242893,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:33.220] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":27.6,""humidity"":50,""co2"":662,""light"":"good"}
+[2025-11-15 21:41:33.223] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":27.6,""humidity"":50,""co2"":662,""light"":"good"}" -q 1
+[2025-11-15 21:41:34.255] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242894,"visualMode":"0"}
+[2025-11-15 21:41:34.258] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242894,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:34.288] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":19.7,""humidity"":39.4,""co2"":1588,""light"":"good"}
+[2025-11-15 21:41:34.290] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":19.7,""humidity"":39.4,""co2"":1588,""light"":"good"}" -q 1
+[2025-11-15 21:41:35.334] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242895,"visualMode":"0"}
+[2025-11-15 21:41:35.337] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242895,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:35.369] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":18.7,""humidity"":77.6,""co2"":1127,""light"":"good"}
+[2025-11-15 21:41:35.372] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":18.7,""humidity"":77.6,""co2"":1127,""light"":"good"}" -q 1
+[2025-11-15 21:41:36.415] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242896,"visualMode":"0"}
+[2025-11-15 21:41:36.418] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242896,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:36.448] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":18.3,""humidity"":76.6,""co2"":1655,""light"":"bad"}
+[2025-11-15 21:41:36.451] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":18.3,""humidity"":76.6,""co2"":1655,""light"":"bad"}" -q 1
+[2025-11-15 21:41:37.500] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242897,"visualMode":"0"}
+[2025-11-15 21:41:37.503] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242897,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:37.543] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":28.5,""humidity"":52.6,""co2"":1324,""light"":"good"}
+[2025-11-15 21:41:37.547] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":28.5,""humidity"":52.6,""co2"":1324,""light"":"good"}" -q 1
+[2025-11-15 21:41:38.590] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242899,"visualMode":"0"}
+[2025-11-15 21:41:38.593] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242899,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:38.625] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25.1,""humidity"":61.3,""co2"":1618,""light"":"good"}
+[2025-11-15 21:41:38.629] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25.1,""humidity"":61.3,""co2"":1618,""light"":"good"}" -q 1
+[2025-11-15 21:41:39.679] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242900,"visualMode":"0"}
+[2025-11-15 21:41:39.681] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242900,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:39.711] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":23.9,""humidity"":76.8,""co2"":1017,""light"":"good"}
+[2025-11-15 21:41:39.713] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":23.9,""humidity"":76.8,""co2"":1017,""light"":"good"}" -q 1
+[2025-11-15 21:41:40.761] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242901,"visualMode":"0"}
+[2025-11-15 21:41:40.763] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242901,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:40.793] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":21.6,""humidity"":57.9,""co2"":548,""light"":"bad"}
+[2025-11-15 21:41:40.797] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":21.6,""humidity"":57.9,""co2"":548,""light"":"bad"}" -q 1
+[2025-11-15 21:41:41.839] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242902,"visualMode":"0"}
+[2025-11-15 21:41:41.841] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242902,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:41.871] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.9,""humidity"":30.6,""co2"":728,""light"":"bad"}
+[2025-11-15 21:41:41.874] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.9,""humidity"":30.6,""co2"":728,""light"":"bad"}" -q 1
+[2025-11-15 21:41:42.912] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242903,"visualMode":"0"}
+[2025-11-15 21:41:42.914] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242903,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:42.944] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":15.3,""humidity"":58.5,""co2"":671,""light"":"bad"}
+[2025-11-15 21:41:42.948] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":15.3,""humidity"":58.5,""co2"":671,""light"":"bad"}" -q 1
+[2025-11-15 21:41:43.992] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242904,"visualMode":"0"}
+[2025-11-15 21:41:43.995] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242904,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:44.028] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.7,""humidity"":39.1,""co2"":829,""light"":"good"}
+[2025-11-15 21:41:44.030] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.7,""humidity"":39.1,""co2"":829,""light"":"good"}" -q 1
+[2025-11-15 21:41:45.076] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242905,"visualMode":"0"}
+[2025-11-15 21:41:45.078] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242905,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:45.109] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":16.1,""humidity"":59.6,""co2"":1925,""light"":"good"}
+[2025-11-15 21:41:45.111] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":16.1,""humidity"":59.6,""co2"":1925,""light"":"good"}" -q 1
+[2025-11-15 21:41:46.209] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242906,"visualMode":"0"}
+[2025-11-15 21:41:46.212] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242906,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:46.256] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":23.1,""humidity"":48.7,""co2"":1336,""light"":"good"}
+[2025-11-15 21:41:46.259] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":23.1,""humidity"":48.7,""co2"":1336,""light"":"good"}" -q 1
+[2025-11-15 21:41:47.302] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242907,"visualMode":"0"}
+[2025-11-15 21:41:47.311] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242907,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:47.398] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":22.6,""humidity"":63,""co2"":1774,""light"":"good"}
+[2025-11-15 21:41:47.401] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":22.6,""humidity"":63,""co2"":1774,""light"":"good"}" -q 1
+[2025-11-15 21:41:48.439] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242908,"visualMode":"0"}
+[2025-11-15 21:41:48.441] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242908,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:48.507] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24.6,""humidity"":72.4,""co2"":1415,""light"":"good"}
+[2025-11-15 21:41:48.509] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24.6,""humidity"":72.4,""co2"":1415,""light"":"good"}" -q 1
+[2025-11-15 21:41:49.552] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242910,"visualMode":"0"}
+[2025-11-15 21:41:49.555] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242910,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:49.584] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":27,""humidity"":48.4,""co2"":1536,""light"":"bad"}
+[2025-11-15 21:41:49.587] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":27,""humidity"":48.4,""co2"":1536,""light"":"bad"}" -q 1
+[2025-11-15 21:41:50.628] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242911,"visualMode":"0"}
+[2025-11-15 21:41:50.631] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242911,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:50.661] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":27.9,""humidity"":67.2,""co2"":469,""light"":"good"}
+[2025-11-15 21:41:50.664] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":27.9,""humidity"":67.2,""co2"":469,""light"":"good"}" -q 1
+[2025-11-15 21:41:51.706] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242912,"visualMode":"0"}
+[2025-11-15 21:41:51.709] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242912,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:51.739] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25.9,""humidity"":30.3,""co2"":1744,""light"":"good"}
+[2025-11-15 21:41:51.741] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25.9,""humidity"":30.3,""co2"":1744,""light"":"good"}" -q 1
+[2025-11-15 21:41:52.785] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242913,"visualMode":"0"}
+[2025-11-15 21:41:52.788] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242913,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:52.818] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":19.2,""humidity"":65.4,""co2"":1871,""light"":"good"}
+[2025-11-15 21:41:52.820] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":19.2,""humidity"":65.4,""co2"":1871,""light"":"good"}" -q 1
+[2025-11-15 21:41:53.861] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242914,"visualMode":"0"}
+[2025-11-15 21:41:53.864] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242914,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:53.896] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":20.4,""humidity"":51.3,""co2"":784,""light"":"bad"}
+[2025-11-15 21:41:53.900] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":20.4,""humidity"":51.3,""co2"":784,""light"":"bad"}" -q 1
+[2025-11-15 21:41:54.941] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242915,"visualMode":"0"}
+[2025-11-15 21:41:54.944] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242915,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:54.973] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":29.8,""humidity"":38.5,""co2"":1739,""light"":"good"}
+[2025-11-15 21:41:54.975] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":29.8,""humidity"":38.5,""co2"":1739,""light"":"good"}" -q 1
+[2025-11-15 21:41:56.013] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242916,"visualMode":"0"}
+[2025-11-15 21:41:56.015] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242916,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:56.060] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":29.6,""humidity"":34.4,""co2"":721,""light"":"bad"}
+[2025-11-15 21:41:56.063] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":29.6,""humidity"":34.4,""co2"":721,""light"":"bad"}" -q 1
+[2025-11-15 21:41:57.113] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242917,"visualMode":"0"}
+[2025-11-15 21:41:57.115] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242917,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:57.145] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.3,""humidity"":79.5,""co2"":623,""light"":"good"}
+[2025-11-15 21:41:57.147] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.3,""humidity"":79.5,""co2"":623,""light"":"good"}" -q 1
+[2025-11-15 21:41:58.181] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242918,"visualMode":"0"}
+[2025-11-15 21:41:58.184] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242918,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:58.216] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":29,""humidity"":69.7,""co2"":509,""light"":"bad"}
+[2025-11-15 21:41:58.219] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":29,""humidity"":69.7,""co2"":509,""light"":"bad"}" -q 1
+[2025-11-15 21:41:59.253] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242919,"visualMode":"0"}
+[2025-11-15 21:41:59.255] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242919,"visualMode":"0"}" -q 1
+[2025-11-15 21:41:59.284] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":22.1,""humidity"":59,""co2"":1160,""light"":"good"}
+[2025-11-15 21:41:59.287] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":22.1,""humidity"":59,""co2"":1160,""light"":"good"}" -q 1
+[2025-11-15 21:42:00.330] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242920,"visualMode":"0"}
+[2025-11-15 21:42:00.332] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242920,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:00.363] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":23.2,""humidity"":67.3,""co2"":1183,""light"":"bad"}
+[2025-11-15 21:42:00.365] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":23.2,""humidity"":67.3,""co2"":1183,""light"":"bad"}" -q 1
+[2025-11-15 21:42:01.416] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242921,"visualMode":"0"}
+[2025-11-15 21:42:01.418] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242921,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:01.449] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":23,""humidity"":42.9,""co2"":1557,""light"":"bad"}
+[2025-11-15 21:42:01.451] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":23,""humidity"":42.9,""co2"":1557,""light"":"bad"}" -q 1
+[2025-11-15 21:42:02.491] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242922,"visualMode":"0"}
+[2025-11-15 21:42:02.494] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242922,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:02.522] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":26.1,""humidity"":48.3,""co2"":1772,""light"":"good"}
+[2025-11-15 21:42:02.525] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":26.1,""humidity"":48.3,""co2"":1772,""light"":"good"}" -q 1
+[2025-11-15 21:42:03.563] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242924,"visualMode":"0"}
+[2025-11-15 21:42:03.566] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242924,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:03.595] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24.1,""humidity"":61.8,""co2"":1028,""light"":"bad"}
+[2025-11-15 21:42:03.597] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24.1,""humidity"":61.8,""co2"":1028,""light"":"bad"}" -q 1
+[2025-11-15 21:42:04.638] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242925,"visualMode":"0"}
+[2025-11-15 21:42:04.642] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242925,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:04.672] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":23,""humidity"":62.2,""co2"":1543,""light"":"bad"}
+[2025-11-15 21:42:04.675] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":23,""humidity"":62.2,""co2"":1543,""light"":"bad"}" -q 1
+[2025-11-15 21:42:05.721] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242926,"visualMode":"0"}
+[2025-11-15 21:42:05.725] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242926,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:05.765] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":23.2,""humidity"":55.5,""co2"":485,""light"":"bad"}
+[2025-11-15 21:42:05.769] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":23.2,""humidity"":55.5,""co2"":485,""light"":"bad"}" -q 1
+[2025-11-15 21:42:06.808] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242927,"visualMode":"0"}
+[2025-11-15 21:42:06.812] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242927,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:06.859] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":28,""humidity"":63.2,""co2"":1027,""light"":"good"}
+[2025-11-15 21:42:06.862] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":28,""humidity"":63.2,""co2"":1027,""light"":"good"}" -q 1
+[2025-11-15 21:42:07.906] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242928,"visualMode":"0"}
+[2025-11-15 21:42:07.908] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242928,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:07.942] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24.6,""humidity"":35.5,""co2"":435,""light"":"bad"}
+[2025-11-15 21:42:07.945] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24.6,""humidity"":35.5,""co2"":435,""light"":"bad"}" -q 1
+[2025-11-15 21:42:08.990] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242929,"visualMode":"0"}
+[2025-11-15 21:42:08.993] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242929,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:09.024] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":29.3,""humidity"":75.4,""co2"":1120,""light"":"good"}
+[2025-11-15 21:42:09.026] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":29.3,""humidity"":75.4,""co2"":1120,""light"":"good"}" -q 1
+[2025-11-15 21:42:10.068] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242930,"visualMode":"0"}
+[2025-11-15 21:42:10.071] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242930,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:10.101] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25.2,""humidity"":45.2,""co2"":1252,""light"":"bad"}
+[2025-11-15 21:42:10.104] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25.2,""humidity"":45.2,""co2"":1252,""light"":"bad"}" -q 1
+[2025-11-15 21:42:11.150] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242931,"visualMode":"0"}
+[2025-11-15 21:42:11.154] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242931,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:11.187] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":20.5,""humidity"":50,""co2"":1670,""light"":"bad"}
+[2025-11-15 21:42:11.189] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":20.5,""humidity"":50,""co2"":1670,""light"":"bad"}" -q 1
+[2025-11-15 21:42:12.232] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242932,"visualMode":"0"}
+[2025-11-15 21:42:12.235] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242932,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:12.274] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17,""humidity"":76.4,""co2"":1310,""light"":"good"}
+[2025-11-15 21:42:12.276] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17,""humidity"":76.4,""co2"":1310,""light"":"good"}" -q 1
+[2025-11-15 21:42:13.313] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242933,"visualMode":"0"}
+[2025-11-15 21:42:13.316] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242933,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:13.351] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":21,""humidity"":51.8,""co2"":846,""light"":"bad"}
+[2025-11-15 21:42:13.355] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":21,""humidity"":51.8,""co2"":846,""light"":"bad"}" -q 1
+[2025-11-15 21:42:14.402] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242934,"visualMode":"0"}
+[2025-11-15 21:42:14.404] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242934,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:14.463] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":28,""humidity"":65.2,""co2"":1663,""light"":"good"}
+[2025-11-15 21:42:14.477] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":28,""humidity"":65.2,""co2"":1663,""light"":"good"}" -q 1
+[2025-11-15 21:42:15.526] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242935,"visualMode":"0"}
+[2025-11-15 21:42:15.528] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242935,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:15.561] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25.4,""humidity"":67.7,""co2"":1464,""light"":"bad"}
+[2025-11-15 21:42:15.563] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25.4,""humidity"":67.7,""co2"":1464,""light"":"bad"}" -q 1
+[2025-11-15 21:42:16.603] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242937,"visualMode":"0"}
+[2025-11-15 21:42:16.606] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242937,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:16.637] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":28,""humidity"":41.7,""co2"":659,""light"":"bad"}
+[2025-11-15 21:42:16.640] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":28,""humidity"":41.7,""co2"":659,""light"":"bad"}" -q 1
+[2025-11-15 21:42:17.673] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242938,"visualMode":"0"}
+[2025-11-15 21:42:17.675] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242938,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:17.706] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":20.1,""humidity"":34.1,""co2"":816,""light"":"bad"}
+[2025-11-15 21:42:17.709] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":20.1,""humidity"":34.1,""co2"":816,""light"":"bad"}" -q 1
+[2025-11-15 21:42:18.759] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242939,"visualMode":"0"}
+[2025-11-15 21:42:18.761] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242939,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:18.791] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.8,""humidity"":37.8,""co2"":1924,""light"":"good"}
+[2025-11-15 21:42:18.793] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.8,""humidity"":37.8,""co2"":1924,""light"":"good"}" -q 1
+[2025-11-15 21:42:19.838] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242940,"visualMode":"0"}
+[2025-11-15 21:42:19.842] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242940,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:19.871] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":16.7,""humidity"":79.9,""co2"":1051,""light"":"good"}
+[2025-11-15 21:42:19.873] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":16.7,""humidity"":79.9,""co2"":1051,""light"":"good"}" -q 1
+[2025-11-15 21:42:20.915] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242941,"visualMode":"0"}
+[2025-11-15 21:42:20.918] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242941,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:20.946] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25.7,""humidity"":43.3,""co2"":1364,""light"":"bad"}
+[2025-11-15 21:42:20.948] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25.7,""humidity"":43.3,""co2"":1364,""light"":"bad"}" -q 1
+[2025-11-15 21:42:21.990] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242942,"visualMode":"0"}
+[2025-11-15 21:42:21.993] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242942,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:22.022] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":16.4,""humidity"":34.6,""co2"":541,""light"":"good"}
+[2025-11-15 21:42:22.025] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":16.4,""humidity"":34.6,""co2"":541,""light"":"good"}" -q 1
+[2025-11-15 21:42:23.065] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242943,"visualMode":"0"}
+[2025-11-15 21:42:23.067] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242943,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:23.097] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":27.5,""humidity"":39.7,""co2"":1856,""light"":"good"}
+[2025-11-15 21:42:23.099] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":27.5,""humidity"":39.7,""co2"":1856,""light"":"good"}" -q 1
+[2025-11-15 21:42:24.144] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242944,"visualMode":"0"}
+[2025-11-15 21:42:24.147] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242944,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:24.176] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":16.8,""humidity"":50.5,""co2"":1270,""light"":"bad"}
+[2025-11-15 21:42:24.178] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":16.8,""humidity"":50.5,""co2"":1270,""light"":"bad"}" -q 1
+[2025-11-15 21:42:25.230] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242945,"visualMode":"0"}
+[2025-11-15 21:42:25.232] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242945,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:25.263] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24.6,""humidity"":63.1,""co2"":1761,""light"":"good"}
+[2025-11-15 21:42:25.266] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24.6,""humidity"":63.1,""co2"":1761,""light"":"good"}" -q 1
+[2025-11-15 21:42:26.307] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242946,"visualMode":"0"}
+[2025-11-15 21:42:26.309] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242946,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:26.340] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":18.6,""humidity"":38.1,""co2"":1112,""light"":"good"}
+[2025-11-15 21:42:26.343] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":18.6,""humidity"":38.1,""co2"":1112,""light"":"good"}" -q 1
+[2025-11-15 21:42:27.377] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242947,"visualMode":"0"}
+[2025-11-15 21:42:27.379] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242947,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:27.410] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25,""humidity"":73.5,""co2"":583,""light"":"good"}
+[2025-11-15 21:42:27.413] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25,""humidity"":73.5,""co2"":583,""light"":"good"}" -q 1
+[2025-11-15 21:42:28.459] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242948,"visualMode":"0"}
+[2025-11-15 21:42:28.461] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242948,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:28.490] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":22.3,""humidity"":32.6,""co2"":1545,""light"":"bad"}
+[2025-11-15 21:42:28.493] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":22.3,""humidity"":32.6,""co2"":1545,""light"":"bad"}" -q 1
+[2025-11-15 21:42:29.535] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242950,"visualMode":"0"}
+[2025-11-15 21:42:29.538] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242950,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:29.580] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":19.5,""humidity"":62.2,""co2"":917,""light"":"good"}
+[2025-11-15 21:42:29.583] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":19.5,""humidity"":62.2,""co2"":917,""light"":"good"}" -q 1
+[2025-11-15 21:42:30.626] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242951,"visualMode":"0"}
+[2025-11-15 21:42:30.629] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242951,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:30.663] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.3,""humidity"":66.3,""co2"":1640,""light"":"bad"}
+[2025-11-15 21:42:30.666] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.3,""humidity"":66.3,""co2"":1640,""light"":"bad"}" -q 1
+[2025-11-15 21:42:31.703] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242952,"visualMode":"0"}
+[2025-11-15 21:42:31.705] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242952,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:31.734] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.2,""humidity"":77.9,""co2"":1682,""light"":"good"}
+[2025-11-15 21:42:31.736] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.2,""humidity"":77.9,""co2"":1682,""light"":"good"}" -q 1
+[2025-11-15 21:42:32.784] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242953,"visualMode":"0"}
+[2025-11-15 21:42:32.787] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242953,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:32.821] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.6,""humidity"":30.6,""co2"":1328,""light"":"bad"}
+[2025-11-15 21:42:32.823] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.6,""humidity"":30.6,""co2"":1328,""light"":"bad"}" -q 1
+[2025-11-15 21:42:33.858] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242954,"visualMode":"0"}
+[2025-11-15 21:42:33.861] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242954,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:33.902] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24.2,""humidity"":31.3,""co2"":1339,""light"":"good"}
+[2025-11-15 21:42:33.905] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24.2,""humidity"":31.3,""co2"":1339,""light"":"good"}" -q 1
+[2025-11-15 21:42:34.950] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242955,"visualMode":"0"}
+[2025-11-15 21:42:34.952] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242955,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:34.984] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.2,""humidity"":43.8,""co2"":1851,""light"":"bad"}
+[2025-11-15 21:42:34.986] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.2,""humidity"":43.8,""co2"":1851,""light"":"bad"}" -q 1
+[2025-11-15 21:42:36.033] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242956,"visualMode":"0"}
+[2025-11-15 21:42:36.036] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242956,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:36.066] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":27.3,""humidity"":57.5,""co2"":835,""light"":"good"}
+[2025-11-15 21:42:36.069] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":27.3,""humidity"":57.5,""co2"":835,""light"":"good"}" -q 1
+[2025-11-15 21:42:37.111] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242957,"visualMode":"0"}
+[2025-11-15 21:42:37.115] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242957,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:37.147] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":29.7,""humidity"":72.2,""co2"":1550,""light"":"bad"}
+[2025-11-15 21:42:37.151] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":29.7,""humidity"":72.2,""co2"":1550,""light"":"bad"}" -q 1
+[2025-11-15 21:42:38.186] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242958,"visualMode":"0"}
+[2025-11-15 21:42:38.189] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242958,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:38.221] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":22.2,""humidity"":32.1,""co2"":1922,""light"":"good"}
+[2025-11-15 21:42:38.223] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":22.2,""humidity"":32.1,""co2"":1922,""light"":"good"}" -q 1
+[2025-11-15 21:42:39.264] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242959,"visualMode":"0"}
+[2025-11-15 21:42:39.267] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242959,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:39.298] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":16.3,""humidity"":35.8,""co2"":1639,""light"":"bad"}
+[2025-11-15 21:42:39.301] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":16.3,""humidity"":35.8,""co2"":1639,""light"":"bad"}" -q 1
+[2025-11-15 21:42:40.343] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242960,"visualMode":"0"}
+[2025-11-15 21:42:40.347] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242960,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:40.378] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":28.3,""humidity"":33.8,""co2"":1978,""light"":"good"}
+[2025-11-15 21:42:40.381] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":28.3,""humidity"":33.8,""co2"":1978,""light"":"good"}" -q 1
+[2025-11-15 21:42:41.425] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242961,"visualMode":"0"}
+[2025-11-15 21:42:41.429] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242961,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:41.457] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":20.4,""humidity"":44.8,""co2"":1809,""light"":"bad"}
+[2025-11-15 21:42:41.460] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":20.4,""humidity"":44.8,""co2"":1809,""light"":"bad"}" -q 1
+[2025-11-15 21:42:42.508] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242962,"visualMode":"0"}
+[2025-11-15 21:42:42.511] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242962,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:42.544] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":19.3,""humidity"":47,""co2"":1415,""light"":"good"}
+[2025-11-15 21:42:42.546] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":19.3,""humidity"":47,""co2"":1415,""light"":"good"}" -q 1
+[2025-11-15 21:42:43.586] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242964,"visualMode":"0"}
+[2025-11-15 21:42:43.590] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242964,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:43.619] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":22,""humidity"":43.3,""co2"":1552,""light"":"good"}
+[2025-11-15 21:42:43.621] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":22,""humidity"":43.3,""co2"":1552,""light"":"good"}" -q 1
+[2025-11-15 21:42:44.663] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242965,"visualMode":"0"}
+[2025-11-15 21:42:44.667] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242965,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:44.700] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":26.1,""humidity"":68.5,""co2"":1373,""light"":"bad"}
+[2025-11-15 21:42:44.703] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":26.1,""humidity"":68.5,""co2"":1373,""light"":"bad"}" -q 1
+[2025-11-15 21:42:45.745] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242966,"visualMode":"0"}
+[2025-11-15 21:42:45.747] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242966,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:45.775] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":21.8,""humidity"":57.5,""co2"":1675,""light"":"good"}
+[2025-11-15 21:42:45.777] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":21.8,""humidity"":57.5,""co2"":1675,""light"":"good"}" -q 1
+[2025-11-15 21:42:46.818] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242967,"visualMode":"0"}
+[2025-11-15 21:42:46.821] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242967,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:46.855] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":18.6,""humidity"":31.2,""co2"":1470,""light"":"good"}
+[2025-11-15 21:42:46.858] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":18.6,""humidity"":31.2,""co2"":1470,""light"":"good"}" -q 1
+[2025-11-15 21:42:47.894] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242968,"visualMode":"0"}
+[2025-11-15 21:42:47.898] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242968,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:47.929] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":15.9,""humidity"":35.3,""co2"":1500,""light"":"good"}
+[2025-11-15 21:42:47.932] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":15.9,""humidity"":35.3,""co2"":1500,""light"":"good"}" -q 1
+[2025-11-15 21:42:48.977] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242969,"visualMode":"0"}
+[2025-11-15 21:42:48.979] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242969,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:49.008] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":18.8,""humidity"":63.6,""co2"":1299,""light"":"good"}
+[2025-11-15 21:42:49.011] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":18.8,""humidity"":63.6,""co2"":1299,""light"":"good"}" -q 1
+[2025-11-15 21:42:50.054] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242970,"visualMode":"0"}
+[2025-11-15 21:42:50.057] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242970,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:50.086] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":19.3,""humidity"":61.4,""co2"":707,""light"":"bad"}
+[2025-11-15 21:42:50.089] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":19.3,""humidity"":61.4,""co2"":707,""light"":"bad"}" -q 1
+[2025-11-15 21:42:51.138] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242971,"visualMode":"0"}
+[2025-11-15 21:42:51.141] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242971,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:51.173] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25,""humidity"":60.8,""co2"":1897,""light"":"bad"}
+[2025-11-15 21:42:51.176] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25,""humidity"":60.8,""co2"":1897,""light"":"bad"}" -q 1
+[2025-11-15 21:42:52.213] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242972,"visualMode":"0"}
+[2025-11-15 21:42:52.216] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242972,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:52.249] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":18.1,""humidity"":43,""co2"":897,""light"":"good"}
+[2025-11-15 21:42:52.252] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":18.1,""humidity"":43,""co2"":897,""light"":"good"}" -q 1
+[2025-11-15 21:42:53.297] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242973,"visualMode":"0"}
+[2025-11-15 21:42:53.301] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242973,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:53.334] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":19.8,""humidity"":76.5,""co2"":1578,""light"":"good"}
+[2025-11-15 21:42:53.337] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":19.8,""humidity"":76.5,""co2"":1578,""light"":"good"}" -q 1
+[2025-11-15 21:42:54.373] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242974,"visualMode":"0"}
+[2025-11-15 21:42:54.375] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242974,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:54.411] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":22.6,""humidity"":38.7,""co2"":1136,""light"":"good"}
+[2025-11-15 21:42:54.414] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":22.6,""humidity"":38.7,""co2"":1136,""light"":"good"}" -q 1
+[2025-11-15 21:42:55.443] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242975,"visualMode":"0"}
+[2025-11-15 21:42:55.446] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242975,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:55.477] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":19.2,""humidity"":64.2,""co2"":462,""light"":"good"}
+[2025-11-15 21:42:55.479] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":19.2,""humidity"":64.2,""co2"":462,""light"":"good"}" -q 1
+[2025-11-15 21:42:56.517] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242976,"visualMode":"0"}
+[2025-11-15 21:42:56.521] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242976,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:56.552] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24.4,""humidity"":67.5,""co2"":1352,""light"":"good"}
+[2025-11-15 21:42:56.555] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24.4,""humidity"":67.5,""co2"":1352,""light"":"good"}" -q 1
+[2025-11-15 21:42:57.590] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242978,"visualMode":"0"}
+[2025-11-15 21:42:57.593] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242978,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:57.623] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24.8,""humidity"":36.9,""co2"":730,""light"":"bad"}
+[2025-11-15 21:42:57.625] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24.8,""humidity"":36.9,""co2"":730,""light"":"bad"}" -q 1
+[2025-11-15 21:42:58.675] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242979,"visualMode":"0"}
+[2025-11-15 21:42:58.678] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242979,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:58.709] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25.6,""humidity"":62.4,""co2"":1571,""light"":"good"}
+[2025-11-15 21:42:58.711] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25.6,""humidity"":62.4,""co2"":1571,""light"":"good"}" -q 1
+[2025-11-15 21:42:59.753] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242980,"visualMode":"0"}
+[2025-11-15 21:42:59.755] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242980,"visualMode":"0"}" -q 1
+[2025-11-15 21:42:59.785] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":23.7,""humidity"":34.2,""co2"":1891,""light"":"bad"}
+[2025-11-15 21:42:59.788] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":23.7,""humidity"":34.2,""co2"":1891,""light"":"bad"}" -q 1
+[2025-11-15 21:43:00.835] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242981,"visualMode":"0"}
+[2025-11-15 21:43:00.839] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242981,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:00.872] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24.2,""humidity"":38,""co2"":548,""light"":"bad"}
+[2025-11-15 21:43:00.874] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24.2,""humidity"":38,""co2"":548,""light"":"bad"}" -q 1
+[2025-11-15 21:43:01.920] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242982,"visualMode":"0"}
+[2025-11-15 21:43:01.922] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242982,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:02.017] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25.7,""humidity"":52.7,""co2"":1694,""light"":"good"}
+[2025-11-15 21:43:02.022] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25.7,""humidity"":52.7,""co2"":1694,""light"":"good"}" -q 1
+[2025-11-15 21:43:03.076] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242983,"visualMode":"0"}
+[2025-11-15 21:43:03.080] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242983,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:03.112] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":20.5,""humidity"":48.5,""co2"":1981,""light"":"good"}
+[2025-11-15 21:43:03.114] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":20.5,""humidity"":48.5,""co2"":1981,""light"":"good"}" -q 1
+[2025-11-15 21:43:04.166] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242984,"visualMode":"0"}
+[2025-11-15 21:43:04.169] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242984,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:04.197] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":18.2,""humidity"":41.2,""co2"":1667,""light"":"bad"}
+[2025-11-15 21:43:04.199] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":18.2,""humidity"":41.2,""co2"":1667,""light"":"bad"}" -q 1
+[2025-11-15 21:43:05.236] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242985,"visualMode":"0"}
+[2025-11-15 21:43:05.239] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242985,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:05.270] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":23.8,""humidity"":72.8,""co2"":1833,""light"":"bad"}
+[2025-11-15 21:43:05.272] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":23.8,""humidity"":72.8,""co2"":1833,""light"":"bad"}" -q 1
+[2025-11-15 21:43:06.315] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242986,"visualMode":"0"}
+[2025-11-15 21:43:06.316] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242986,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:06.346] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":15.3,""humidity"":67.6,""co2"":1978,""light"":"good"}
+[2025-11-15 21:43:06.349] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":15.3,""humidity"":67.6,""co2"":1978,""light"":"good"}" -q 1
+[2025-11-15 21:43:07.400] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242987,"visualMode":"0"}
+[2025-11-15 21:43:07.403] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242987,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:07.437] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":15.8,""humidity"":55.9,""co2"":1216,""light"":"bad"}
+[2025-11-15 21:43:07.440] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":15.8,""humidity"":55.9,""co2"":1216,""light"":"bad"}" -q 1
+[2025-11-15 21:43:08.472] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242988,"visualMode":"0"}
+[2025-11-15 21:43:08.474] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242988,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:08.513] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":18,""humidity"":61.3,""co2"":1585,""light"":"good"}
+[2025-11-15 21:43:08.516] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":18,""humidity"":61.3,""co2"":1585,""light"":"good"}" -q 1
+[2025-11-15 21:43:09.552] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242990,"visualMode":"0"}
+[2025-11-15 21:43:09.556] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242990,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:09.589] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":18.6,""humidity"":61.2,""co2"":1559,""light"":"good"}
+[2025-11-15 21:43:09.591] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":18.6,""humidity"":61.2,""co2"":1559,""light"":"good"}" -q 1
+[2025-11-15 21:43:10.634] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242991,"visualMode":"0"}
+[2025-11-15 21:43:10.637] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242991,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:10.671] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":23.9,""humidity"":33,""co2"":1399,""light"":"good"}
+[2025-11-15 21:43:10.674] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":23.9,""humidity"":33,""co2"":1399,""light"":"good"}" -q 1
+[2025-11-15 21:43:11.723] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242992,"visualMode":"0"}
+[2025-11-15 21:43:11.726] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242992,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:11.756] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":29.1,""humidity"":53.2,""co2"":1704,""light"":"good"}
+[2025-11-15 21:43:11.759] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":29.1,""humidity"":53.2,""co2"":1704,""light"":"good"}" -q 1
+[2025-11-15 21:43:12.802] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242993,"visualMode":"0"}
+[2025-11-15 21:43:12.804] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242993,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:12.837] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.3,""humidity"":36.4,""co2"":1329,""light"":"good"}
+[2025-11-15 21:43:12.838] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.3,""humidity"":36.4,""co2"":1329,""light"":"good"}" -q 1
+[2025-11-15 21:43:13.883] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242994,"visualMode":"0"}
+[2025-11-15 21:43:13.886] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242994,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:13.926] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":27.8,""humidity"":36.3,""co2"":1234,""light"":"bad"}
+[2025-11-15 21:43:13.929] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":27.8,""humidity"":36.3,""co2"":1234,""light"":"bad"}" -q 1
+[2025-11-15 21:43:14.970] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242995,"visualMode":"0"}
+[2025-11-15 21:43:14.972] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242995,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:15.005] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.8,""humidity"":30.6,""co2"":1706,""light"":"bad"}
+[2025-11-15 21:43:15.007] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.8,""humidity"":30.6,""co2"":1706,""light"":"bad"}" -q 1
+[2025-11-15 21:43:16.049] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242996,"visualMode":"0"}
+[2025-11-15 21:43:16.051] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242996,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:16.093] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.6,""humidity"":31.1,""co2"":1879,""light"":"good"}
+[2025-11-15 21:43:16.097] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.6,""humidity"":31.1,""co2"":1879,""light"":"good"}" -q 1
+[2025-11-15 21:43:17.142] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242997,"visualMode":"0"}
+[2025-11-15 21:43:17.145] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242997,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:17.180] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":29.2,""humidity"":36.8,""co2"":1892,""light"":"bad"}
+[2025-11-15 21:43:17.183] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":29.2,""humidity"":36.8,""co2"":1892,""light"":"bad"}" -q 1
+[2025-11-15 21:43:18.238] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242998,"visualMode":"0"}
+[2025-11-15 21:43:18.241] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242998,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:18.274] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24.4,""humidity"":58.2,""co2"":1740,""light"":"bad"}
+[2025-11-15 21:43:18.279] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24.4,""humidity"":58.2,""co2"":1740,""light"":"bad"}" -q 1
+[2025-11-15 21:43:19.316] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763242999,"visualMode":"0"}
+[2025-11-15 21:43:19.319] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763242999,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:19.355] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":22.5,""humidity"":63.6,""co2"":423,""light"":"bad"}
+[2025-11-15 21:43:19.357] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":22.5,""humidity"":63.6,""co2"":423,""light"":"bad"}" -q 1
+[2025-11-15 21:43:20.389] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243000,"visualMode":"0"}
+[2025-11-15 21:43:20.391] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243000,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:20.424] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":18.5,""humidity"":66.1,""co2"":1967,""light"":"bad"}
+[2025-11-15 21:43:20.428] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":18.5,""humidity"":66.1,""co2"":1967,""light"":"bad"}" -q 1
+[2025-11-15 21:43:21.465] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243001,"visualMode":"0"}
+[2025-11-15 21:43:21.467] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243001,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:21.507] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":29,""humidity"":65.2,""co2"":1872,""light"":"bad"}
+[2025-11-15 21:43:21.511] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":29,""humidity"":65.2,""co2"":1872,""light"":"bad"}" -q 1
+[2025-11-15 21:43:22.548] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243003,"visualMode":"0"}
+[2025-11-15 21:43:22.553] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243003,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:22.586] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":29.1,""humidity"":31.5,""co2"":1708,""light"":"good"}
+[2025-11-15 21:43:22.588] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":29.1,""humidity"":31.5,""co2"":1708,""light"":"good"}" -q 1
+[2025-11-15 21:43:23.637] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243004,"visualMode":"0"}
+[2025-11-15 21:43:23.642] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243004,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:23.679] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":16.6,""humidity"":30.9,""co2"":774,""light"":"good"}
+[2025-11-15 21:43:23.682] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":16.6,""humidity"":30.9,""co2"":774,""light"":"good"}" -q 1
+[2025-11-15 21:43:24.723] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243005,"visualMode":"0"}
+[2025-11-15 21:43:24.727] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243005,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:24.763] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":27.1,""humidity"":73,""co2"":1916,""light"":"bad"}
+[2025-11-15 21:43:24.765] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":27.1,""humidity"":73,""co2"":1916,""light"":"bad"}" -q 1
+[2025-11-15 21:43:25.798] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243006,"visualMode":"0"}
+[2025-11-15 21:43:25.801] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243006,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:25.833] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17,""humidity"":51.4,""co2"":765,""light"":"bad"}
+[2025-11-15 21:43:25.837] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17,""humidity"":51.4,""co2"":765,""light"":"bad"}" -q 1
+[2025-11-15 21:43:26.876] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243007,"visualMode":"0"}
+[2025-11-15 21:43:26.878] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243007,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:26.911] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":23,""humidity"":33.6,""co2"":1444,""light"":"bad"}
+[2025-11-15 21:43:26.913] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":23,""humidity"":33.6,""co2"":1444,""light"":"bad"}" -q 1
+[2025-11-15 21:43:27.959] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243008,"visualMode":"0"}
+[2025-11-15 21:43:27.961] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243008,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:28.001] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":19.4,""humidity"":79.6,""co2"":1969,""light"":"good"}
+[2025-11-15 21:43:28.003] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":19.4,""humidity"":79.6,""co2"":1969,""light"":"good"}" -q 1
+[2025-11-15 21:43:29.047] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243009,"visualMode":"0"}
+[2025-11-15 21:43:29.047] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243009,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:29.080] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":16.7,""humidity"":79.6,""co2"":1186,""light"":"good"}
+[2025-11-15 21:43:29.083] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":16.7,""humidity"":79.6,""co2"":1186,""light"":"good"}" -q 1
+[2025-11-15 21:43:30.126] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243010,"visualMode":"0"}
+[2025-11-15 21:43:30.129] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243010,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:30.159] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":15.5,""humidity"":43,""co2"":1883,""light"":"good"}
+[2025-11-15 21:43:30.162] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":15.5,""humidity"":43,""co2"":1883,""light"":"good"}" -q 1
+[2025-11-15 21:43:31.208] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243011,"visualMode":"0"}
+[2025-11-15 21:43:31.211] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243011,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:31.243] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":16.5,""humidity"":79.9,""co2"":813,""light"":"bad"}
+[2025-11-15 21:43:31.246] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":16.5,""humidity"":79.9,""co2"":813,""light"":"bad"}" -q 1
+[2025-11-15 21:43:32.290] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243012,"visualMode":"0"}
+[2025-11-15 21:43:32.292] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243012,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:32.321] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":19.8,""humidity"":73,""co2"":1422,""light"":"bad"}
+[2025-11-15 21:43:32.324] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":19.8,""humidity"":73,""co2"":1422,""light"":"bad"}" -q 1
+[2025-11-15 21:43:33.357] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243013,"visualMode":"0"}
+[2025-11-15 21:43:33.360] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243013,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:33.392] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":20,""humidity"":60.3,""co2"":1652,""light"":"bad"}
+[2025-11-15 21:43:33.395] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":20,""humidity"":60.3,""co2"":1652,""light"":"bad"}" -q 1
+[2025-11-15 21:43:34.434] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243014,"visualMode":"0"}
+[2025-11-15 21:43:34.438] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243014,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:34.470] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25.9,""humidity"":52.3,""co2"":1030,""light"":"bad"}
+[2025-11-15 21:43:34.474] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25.9,""humidity"":52.3,""co2"":1030,""light"":"bad"}" -q 1
+[2025-11-15 21:43:35.516] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243015,"visualMode":"0"}
+[2025-11-15 21:43:35.520] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243015,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:35.557] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":22.4,""humidity"":38.7,""co2"":439,""light"":"bad"}
+[2025-11-15 21:43:35.560] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":22.4,""humidity"":38.7,""co2"":439,""light"":"bad"}" -q 1
+[2025-11-15 21:43:36.612] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243017,"visualMode":"0"}
+[2025-11-15 21:43:36.615] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243017,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:36.647] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":15.8,""humidity"":46.7,""co2"":1419,""light"":"bad"}
+[2025-11-15 21:43:36.650] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":15.8,""humidity"":46.7,""co2"":1419,""light"":"bad"}" -q 1
+[2025-11-15 21:43:37.686] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243018,"visualMode":"0"}
+[2025-11-15 21:43:37.688] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243018,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:37.719] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":15.8,""humidity"":61.6,""co2"":1939,""light"":"good"}
+[2025-11-15 21:43:37.721] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":15.8,""humidity"":61.6,""co2"":1939,""light"":"good"}" -q 1
+[2025-11-15 21:43:38.788] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243019,"visualMode":"0"}
+[2025-11-15 21:43:38.793] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243019,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:38.829] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":22.9,""humidity"":68.3,""co2"":717,""light"":"bad"}
+[2025-11-15 21:43:38.834] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":22.9,""humidity"":68.3,""co2"":717,""light"":"bad"}" -q 1
+[2025-11-15 21:43:39.866] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243020,"visualMode":"0"}
+[2025-11-15 21:43:39.867] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243020,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:39.899] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":29,""humidity"":53.9,""co2"":1147,""light"":"good"}
+[2025-11-15 21:43:39.904] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":29,""humidity"":53.9,""co2"":1147,""light"":"good"}" -q 1
+[2025-11-15 21:43:40.936] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243021,"visualMode":"0"}
+[2025-11-15 21:43:40.943] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243021,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:40.974] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.6,""humidity"":45.7,""co2"":1180,""light"":"bad"}
+[2025-11-15 21:43:40.976] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.6,""humidity"":45.7,""co2"":1180,""light"":"bad"}" -q 1
+[2025-11-15 21:43:42.026] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243022,"visualMode":"0"}
+[2025-11-15 21:43:42.031] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243022,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:42.061] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":21.5,""humidity"":32,""co2"":808,""light"":"bad"}
+[2025-11-15 21:43:42.064] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":21.5,""humidity"":32,""co2"":808,""light"":"bad"}" -q 1
+[2025-11-15 21:43:43.108] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243023,"visualMode":"0"}
+[2025-11-15 21:43:43.109] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243023,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:43.154] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":18.1,""humidity"":47.1,""co2"":1137,""light"":"bad"}
+[2025-11-15 21:43:43.158] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":18.1,""humidity"":47.1,""co2"":1137,""light"":"bad"}" -q 1
+[2025-11-15 21:43:44.199] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243024,"visualMode":"0"}
+[2025-11-15 21:43:44.202] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243024,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:44.239] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24,""humidity"":64.5,""co2"":1958,""light"":"bad"}
+[2025-11-15 21:43:44.242] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24,""humidity"":64.5,""co2"":1958,""light"":"bad"}" -q 1
+[2025-11-15 21:43:45.278] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243025,"visualMode":"0"}
+[2025-11-15 21:43:45.280] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243025,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:45.315] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":18.5,""humidity"":33.1,""co2"":1068,""light"":"bad"}
+[2025-11-15 21:43:45.318] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":18.5,""humidity"":33.1,""co2"":1068,""light"":"bad"}" -q 1
+[2025-11-15 21:43:46.361] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243026,"visualMode":"0"}
+[2025-11-15 21:43:46.364] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243026,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:46.396] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":20.4,""humidity"":45.6,""co2"":1783,""light"":"bad"}
+[2025-11-15 21:43:46.398] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":20.4,""humidity"":45.6,""co2"":1783,""light"":"bad"}" -q 1
+[2025-11-15 21:43:47.438] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243027,"visualMode":"0"}
+[2025-11-15 21:43:47.442] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243027,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:47.488] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":28.5,""humidity"":56.3,""co2"":535,""light"":"bad"}
+[2025-11-15 21:43:47.492] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":28.5,""humidity"":56.3,""co2"":535,""light"":"bad"}" -q 1
+[2025-11-15 21:43:48.532] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243028,"visualMode":"0"}
+[2025-11-15 21:43:48.534] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243028,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:48.572] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":21.1,""humidity"":41.7,""co2"":1528,""light"":"good"}
+[2025-11-15 21:43:48.575] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":21.1,""humidity"":41.7,""co2"":1528,""light"":"good"}" -q 1
+[2025-11-15 21:43:49.616] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243030,"visualMode":"0"}
+[2025-11-15 21:43:49.620] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243030,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:49.663] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":29.7,""humidity"":42.8,""co2"":1411,""light"":"good"}
+[2025-11-15 21:43:49.666] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":29.7,""humidity"":42.8,""co2"":1411,""light"":"good"}" -q 1
+[2025-11-15 21:43:50.718] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243031,"visualMode":"0"}
+[2025-11-15 21:43:50.721] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243031,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:50.758] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25.3,""humidity"":47.6,""co2"":1092,""light"":"good"}
+[2025-11-15 21:43:50.763] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25.3,""humidity"":47.6,""co2"":1092,""light"":"good"}" -q 1
+[2025-11-15 21:43:51.794] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243032,"visualMode":"0"}
+[2025-11-15 21:43:51.797] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243032,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:51.833] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":16.2,""humidity"":77.6,""co2"":1580,""light"":"bad"}
+[2025-11-15 21:43:51.836] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":16.2,""humidity"":77.6,""co2"":1580,""light"":"bad"}" -q 1
+[2025-11-15 21:43:52.871] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243033,"visualMode":"0"}
+[2025-11-15 21:43:52.874] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243033,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:52.907] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.6,""humidity"":44.8,""co2"":1225,""light"":"bad"}
+[2025-11-15 21:43:52.909] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.6,""humidity"":44.8,""co2"":1225,""light"":"bad"}" -q 1
+[2025-11-15 21:43:53.944] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243034,"visualMode":"0"}
+[2025-11-15 21:43:53.949] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243034,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:53.986] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":26.9,""humidity"":47,""co2"":902,""light"":"bad"}
+[2025-11-15 21:43:53.989] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":26.9,""humidity"":47,""co2"":902,""light"":"bad"}" -q 1
+[2025-11-15 21:43:55.041] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243035,"visualMode":"0"}
+[2025-11-15 21:43:55.043] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243035,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:55.084] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":15.9,""humidity"":64.9,""co2"":1644,""light"":"bad"}
+[2025-11-15 21:43:55.087] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":15.9,""humidity"":64.9,""co2"":1644,""light"":"bad"}" -q 1
+[2025-11-15 21:43:56.164] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243036,"visualMode":"0"}
+[2025-11-15 21:43:56.170] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243036,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:56.218] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":21.8,""humidity"":70.1,""co2"":1639,""light"":"bad"}
+[2025-11-15 21:43:56.222] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":21.8,""humidity"":70.1,""co2"":1639,""light"":"bad"}" -q 1
+[2025-11-15 21:43:57.257] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243037,"visualMode":"0"}
+[2025-11-15 21:43:57.261] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243037,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:57.300] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":29.3,""humidity"":64.6,""co2"":840,""light"":"bad"}
+[2025-11-15 21:43:57.302] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":29.3,""humidity"":64.6,""co2"":840,""light"":"bad"}" -q 1
+[2025-11-15 21:43:58.342] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243038,"visualMode":"0"}
+[2025-11-15 21:43:58.347] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243038,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:58.377] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24.6,""humidity"":40.7,""co2"":1501,""light"":"good"}
+[2025-11-15 21:43:58.381] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24.6,""humidity"":40.7,""co2"":1501,""light"":"good"}" -q 1
+[2025-11-15 21:43:59.426] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243039,"visualMode":"0"}
+[2025-11-15 21:43:59.433] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243039,"visualMode":"0"}" -q 1
+[2025-11-15 21:43:59.471] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":15.9,""humidity"":69.7,""co2"":677,""light"":"bad"}
+[2025-11-15 21:43:59.474] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":15.9,""humidity"":69.7,""co2"":677,""light"":"bad"}" -q 1
+[2025-11-15 21:44:00.512] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243040,"visualMode":"0"}
+[2025-11-15 21:44:00.516] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243040,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:00.552] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24.4,""humidity"":50.4,""co2"":1505,""light"":"good"}
+[2025-11-15 21:44:00.552] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24.4,""humidity"":50.4,""co2"":1505,""light"":"good"}" -q 1
+[2025-11-15 21:44:01.611] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243042,"visualMode":"0"}
+[2025-11-15 21:44:01.615] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243042,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:01.651] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":23.6,""humidity"":37.8,""co2"":1223,""light"":"bad"}
+[2025-11-15 21:44:01.654] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":23.6,""humidity"":37.8,""co2"":1223,""light"":"bad"}" -q 1
+[2025-11-15 21:44:02.689] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243043,"visualMode":"0"}
+[2025-11-15 21:44:02.693] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243043,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:02.723] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":15.1,""humidity"":42.4,""co2"":1633,""light"":"good"}
+[2025-11-15 21:44:02.725] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":15.1,""humidity"":42.4,""co2"":1633,""light"":"good"}" -q 1
+[2025-11-15 21:44:03.769] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243044,"visualMode":"0"}
+[2025-11-15 21:44:03.773] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243044,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:03.814] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":28.8,""humidity"":71.6,""co2"":698,""light"":"good"}
+[2025-11-15 21:44:03.817] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":28.8,""humidity"":71.6,""co2"":698,""light"":"good"}" -q 1
+[2025-11-15 21:44:04.849] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243045,"visualMode":"0"}
+[2025-11-15 21:44:04.853] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243045,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:04.889] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":22.2,""humidity"":68.7,""co2"":1567,""light"":"bad"}
+[2025-11-15 21:44:04.892] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":22.2,""humidity"":68.7,""co2"":1567,""light"":"bad"}" -q 1
+[2025-11-15 21:44:05.942] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243046,"visualMode":"0"}
+[2025-11-15 21:44:05.944] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243046,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:05.978] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":23.7,""humidity"":56.3,""co2"":487,""light"":"good"}
+[2025-11-15 21:44:05.983] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":23.7,""humidity"":56.3,""co2"":487,""light"":"good"}" -q 1
+[2025-11-15 21:44:07.024] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243047,"visualMode":"0"}
+[2025-11-15 21:44:07.027] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243047,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:07.069] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25.2,""humidity"":68.1,""co2"":515,""light"":"bad"}
+[2025-11-15 21:44:07.073] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25.2,""humidity"":68.1,""co2"":515,""light"":"bad"}" -q 1
+[2025-11-15 21:44:08.115] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243048,"visualMode":"0"}
+[2025-11-15 21:44:08.118] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243048,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:08.165] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24.1,""humidity"":38.7,""co2"":1649,""light"":"bad"}
+[2025-11-15 21:44:08.168] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24.1,""humidity"":38.7,""co2"":1649,""light"":"bad"}" -q 1
+[2025-11-15 21:44:09.210] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243049,"visualMode":"0"}
+[2025-11-15 21:44:09.213] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243049,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:09.246] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.5,""humidity"":51.6,""co2"":788,""light"":"bad"}
+[2025-11-15 21:44:09.248] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.5,""humidity"":51.6,""co2"":788,""light"":"bad"}" -q 1
+[2025-11-15 21:44:10.293] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243050,"visualMode":"0"}
+[2025-11-15 21:44:10.295] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243050,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:10.324] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":15.1,""humidity"":48.4,""co2"":854,""light"":"good"}
+[2025-11-15 21:44:10.324] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":15.1,""humidity"":48.4,""co2"":854,""light"":"good"}" -q 1
+[2025-11-15 21:44:11.370] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243051,"visualMode":"0"}
+[2025-11-15 21:44:11.372] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243051,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:11.405] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":19.3,""humidity"":38.6,""co2"":1836,""light"":"bad"}
+[2025-11-15 21:44:11.408] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":19.3,""humidity"":38.6,""co2"":1836,""light"":"bad"}" -q 1
+[2025-11-15 21:44:12.447] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243052,"visualMode":"0"}
+[2025-11-15 21:44:12.449] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243052,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:12.485] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":28.8,""humidity"":40.3,""co2"":486,""light"":"bad"}
+[2025-11-15 21:44:12.488] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":28.8,""humidity"":40.3,""co2"":486,""light"":"bad"}" -q 1
+[2025-11-15 21:44:13.522] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243053,"visualMode":"0"}
+[2025-11-15 21:44:13.525] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243053,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:13.556] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":15.4,""humidity"":50.4,""co2"":1780,""light"":"good"}
+[2025-11-15 21:44:13.558] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":15.4,""humidity"":50.4,""co2"":1780,""light"":"good"}" -q 1
+[2025-11-15 21:44:14.600] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243055,"visualMode":"0"}
+[2025-11-15 21:44:14.602] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243055,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:14.635] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":16,""humidity"":44.5,""co2"":888,""light"":"good"}
+[2025-11-15 21:44:14.638] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":16,""humidity"":44.5,""co2"":888,""light"":"good"}" -q 1
+[2025-11-15 21:44:15.690] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243056,"visualMode":"0"}
+[2025-11-15 21:44:15.692] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243056,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:15.724] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":20.3,""humidity"":45.2,""co2"":1569,""light"":"bad"}
+[2025-11-15 21:44:15.726] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":20.3,""humidity"":45.2,""co2"":1569,""light"":"bad"}" -q 1
+[2025-11-15 21:44:16.775] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243057,"visualMode":"0"}
+[2025-11-15 21:44:16.777] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243057,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:16.811] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":16.2,""humidity"":57.8,""co2"":1995,""light"":"bad"}
+[2025-11-15 21:44:16.814] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":16.2,""humidity"":57.8,""co2"":1995,""light"":"bad"}" -q 1
+[2025-11-15 21:44:17.853] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243058,"visualMode":"0"}
+[2025-11-15 21:44:17.854] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243058,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:17.885] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":22,""humidity"":68.5,""co2"":1846,""light"":"good"}
+[2025-11-15 21:44:17.887] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":22,""humidity"":68.5,""co2"":1846,""light"":"good"}" -q 1
+[2025-11-15 21:44:18.939] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243059,"visualMode":"0"}
+[2025-11-15 21:44:18.941] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243059,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:18.978] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":23.8,""humidity"":56.7,""co2"":834,""light"":"good"}
+[2025-11-15 21:44:18.981] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":23.8,""humidity"":56.7,""co2"":834,""light"":"good"}" -q 1
+[2025-11-15 21:44:20.021] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243060,"visualMode":"0"}
+[2025-11-15 21:44:20.024] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243060,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:20.055] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":22.3,""humidity"":51.7,""co2"":1353,""light"":"good"}
+[2025-11-15 21:44:20.058] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":22.3,""humidity"":51.7,""co2"":1353,""light"":"good"}" -q 1
+[2025-11-15 21:44:21.107] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243061,"visualMode":"0"}
+[2025-11-15 21:44:21.112] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243061,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:21.144] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24.4,""humidity"":47.3,""co2"":1145,""light"":"good"}
+[2025-11-15 21:44:21.147] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24.4,""humidity"":47.3,""co2"":1145,""light"":"good"}" -q 1
+[2025-11-15 21:44:22.181] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243062,"visualMode":"0"}
+[2025-11-15 21:44:22.184] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243062,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:22.229] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25.6,""humidity"":43.4,""co2"":1888,""light"":"good"}
+[2025-11-15 21:44:22.230] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25.6,""humidity"":43.4,""co2"":1888,""light"":"good"}" -q 1
+[2025-11-15 21:44:23.274] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243063,"visualMode":"0"}
+[2025-11-15 21:44:23.278] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243063,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:23.311] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":19.7,""humidity"":54.8,""co2"":1897,""light"":"bad"}
+[2025-11-15 21:44:23.313] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":19.7,""humidity"":54.8,""co2"":1897,""light"":"bad"}" -q 1
+[2025-11-15 21:44:24.357] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243064,"visualMode":"0"}
+[2025-11-15 21:44:24.361] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243064,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:24.392] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":16.9,""humidity"":36.9,""co2"":880,""light"":"bad"}
+[2025-11-15 21:44:24.394] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":16.9,""humidity"":36.9,""co2"":880,""light"":"bad"}" -q 1
+[2025-11-15 21:44:25.438] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243065,"visualMode":"0"}
+[2025-11-15 21:44:25.442] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243065,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:25.480] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24.6,""humidity"":53.6,""co2"":738,""light"":"bad"}
+[2025-11-15 21:44:25.482] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24.6,""humidity"":53.6,""co2"":738,""light"":"bad"}" -q 1
+[2025-11-15 21:44:26.542] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243066,"visualMode":"0"}
+[2025-11-15 21:44:26.545] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243066,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:26.579] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.6,""humidity"":33.1,""co2"":787,""light"":"good"}
+[2025-11-15 21:44:26.582] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.6,""humidity"":33.1,""co2"":787,""light"":"good"}" -q 1
+[2025-11-15 21:44:27.631] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243068,"visualMode":"0"}
+[2025-11-15 21:44:27.633] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243068,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:27.679] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":19.5,""humidity"":58.3,""co2"":743,""light"":"good"}
+[2025-11-15 21:44:27.682] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":19.5,""humidity"":58.3,""co2"":743,""light"":"good"}" -q 1
+[2025-11-15 21:44:28.730] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243069,"visualMode":"0"}
+[2025-11-15 21:44:28.733] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243069,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:28.769] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.1,""humidity"":67.6,""co2"":1671,""light"":"bad"}
+[2025-11-15 21:44:28.773] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.1,""humidity"":67.6,""co2"":1671,""light"":"bad"}" -q 1
+[2025-11-15 21:44:29.815] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243070,"visualMode":"0"}
+[2025-11-15 21:44:29.820] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243070,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:29.863] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25.4,""humidity"":74.9,""co2"":1162,""light"":"good"}
+[2025-11-15 21:44:29.865] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25.4,""humidity"":74.9,""co2"":1162,""light"":"good"}" -q 1
+[2025-11-15 21:44:30.925] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243071,"visualMode":"0"}
+[2025-11-15 21:44:30.929] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243071,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:30.978] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":27.6,""humidity"":43,""co2"":565,""light"":"bad"}
+[2025-11-15 21:44:30.982] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":27.6,""humidity"":43,""co2"":565,""light"":"bad"}" -q 1
+[2025-11-15 21:44:32.054] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243072,"visualMode":"0"}
+[2025-11-15 21:44:32.058] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243072,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:32.103] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24.4,""humidity"":69.9,""co2"":1238,""light"":"bad"}
+[2025-11-15 21:44:32.106] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24.4,""humidity"":69.9,""co2"":1238,""light"":"bad"}" -q 1
+[2025-11-15 21:44:33.156] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243073,"visualMode":"0"}
+[2025-11-15 21:44:33.159] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243073,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:33.206] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":27.5,""humidity"":31.4,""co2"":980,""light"":"good"}
+[2025-11-15 21:44:33.207] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":27.5,""humidity"":31.4,""co2"":980,""light"":"good"}" -q 1
+[2025-11-15 21:44:34.451] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243074,"visualMode":"0"}
+[2025-11-15 21:44:34.457] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243074,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:34.586] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":18.5,""humidity"":58.3,""co2"":1155,""light"":"good"}
+[2025-11-15 21:44:34.592] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":18.5,""humidity"":58.3,""co2"":1155,""light"":"good"}" -q 1
+[2025-11-15 21:44:35.691] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243076,"visualMode":"0"}
+[2025-11-15 21:44:35.697] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243076,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:35.788] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":18.3,""humidity"":73.2,""co2"":770,""light"":"bad"}
+[2025-11-15 21:44:35.793] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":18.3,""humidity"":73.2,""co2"":770,""light"":"bad"}" -q 1
+[2025-11-15 21:44:36.956] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243077,"visualMode":"0"}
+[2025-11-15 21:44:36.966] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243077,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:37.108] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":16.6,""humidity"":45.8,""co2"":669,""light"":"good"}
+[2025-11-15 21:44:37.121] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":16.6,""humidity"":45.8,""co2"":669,""light"":"good"}" -q 1
+[2025-11-15 21:44:38.226] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243078,"visualMode":"0"}
+[2025-11-15 21:44:38.234] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243078,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:38.318] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":15.8,""humidity"":51.8,""co2"":496,""light"":"bad"}
+[2025-11-15 21:44:38.322] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":15.8,""humidity"":51.8,""co2"":496,""light"":"bad"}" -q 1
+[2025-11-15 21:44:39.498] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243079,"visualMode":"0"}
+[2025-11-15 21:44:39.506] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243079,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:39.579] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25.5,""humidity"":45.3,""co2"":691,""light"":"good"}
+[2025-11-15 21:44:39.585] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25.5,""humidity"":45.3,""co2"":691,""light"":"good"}" -q 1
+[2025-11-15 21:44:40.804] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243081,"visualMode":"0"}
+[2025-11-15 21:44:40.809] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243081,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:40.905] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24.9,""humidity"":44.7,""co2"":1788,""light"":"good"}
+[2025-11-15 21:44:40.909] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24.9,""humidity"":44.7,""co2"":1788,""light"":"good"}" -q 1
+[2025-11-15 21:44:41.975] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243082,"visualMode":"0"}
+[2025-11-15 21:44:41.981] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243082,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:42.025] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":20.5,""humidity"":49.8,""co2"":567,""light"":"good"}
+[2025-11-15 21:44:42.030] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":20.5,""humidity"":49.8,""co2"":567,""light"":"good"}" -q 1
+[2025-11-15 21:44:43.075] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243083,"visualMode":"0"}
+[2025-11-15 21:44:43.079] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243083,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:43.126] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":23.1,""humidity"":43.6,""co2"":905,""light"":"good"}
+[2025-11-15 21:44:43.130] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":23.1,""humidity"":43.6,""co2"":905,""light"":"good"}" -q 1
+[2025-11-15 21:44:44.175] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243084,"visualMode":"0"}
+[2025-11-15 21:44:44.178] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243084,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:44.221] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":18,""humidity"":68.2,""co2"":818,""light"":"bad"}
+[2025-11-15 21:44:44.227] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":18,""humidity"":68.2,""co2"":818,""light"":"bad"}" -q 1
+[2025-11-15 21:44:45.269] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243085,"visualMode":"0"}
+[2025-11-15 21:44:45.272] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243085,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:45.310] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":19.2,""humidity"":68.8,""co2"":1051,""light"":"bad"}
+[2025-11-15 21:44:45.313] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":19.2,""humidity"":68.8,""co2"":1051,""light"":"bad"}" -q 1
+[2025-11-15 21:44:46.351] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243086,"visualMode":"0"}
+[2025-11-15 21:44:46.354] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243086,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:46.386] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25,""humidity"":75.5,""co2"":1845,""light"":"bad"}
+[2025-11-15 21:44:46.389] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25,""humidity"":75.5,""co2"":1845,""light"":"bad"}" -q 1
+[2025-11-15 21:44:47.431] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243087,"visualMode":"0"}
+[2025-11-15 21:44:47.434] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243087,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:47.471] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":16.4,""humidity"":78,""co2"":1619,""light"":"good"}
+[2025-11-15 21:44:47.474] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":16.4,""humidity"":78,""co2"":1619,""light"":"good"}" -q 1
+[2025-11-15 21:44:48.526] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243088,"visualMode":"0"}
+[2025-11-15 21:44:48.530] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243088,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:48.574] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":26.1,""humidity"":78.2,""co2"":828,""light"":"bad"}
+[2025-11-15 21:44:48.577] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":26.1,""humidity"":78.2,""co2"":828,""light"":"bad"}" -q 1
+[2025-11-15 21:44:49.620] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243090,"visualMode":"0"}
+[2025-11-15 21:44:49.622] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243090,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:49.657] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":27.7,""humidity"":36.7,""co2"":1661,""light"":"bad"}
+[2025-11-15 21:44:49.659] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":27.7,""humidity"":36.7,""co2"":1661,""light"":"bad"}" -q 1
+[2025-11-15 21:44:50.692] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243091,"visualMode":"0"}
+[2025-11-15 21:44:50.696] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243091,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:50.724] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25.5,""humidity"":34.6,""co2"":1439,""light"":"bad"}
+[2025-11-15 21:44:50.729] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25.5,""humidity"":34.6,""co2"":1439,""light"":"bad"}" -q 1
+[2025-11-15 21:44:51.771] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243092,"visualMode":"0"}
+[2025-11-15 21:44:51.774] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243092,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:51.804] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":26.4,""humidity"":72.7,""co2"":444,""light"":"bad"}
+[2025-11-15 21:44:51.807] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":26.4,""humidity"":72.7,""co2"":444,""light"":"bad"}" -q 1
+[2025-11-15 21:44:52.856] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243093,"visualMode":"0"}
+[2025-11-15 21:44:52.857] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243093,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:52.889] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":30,""humidity"":74.6,""co2"":1906,""light"":"good"}
+[2025-11-15 21:44:52.893] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":30,""humidity"":74.6,""co2"":1906,""light"":"good"}" -q 1
+[2025-11-15 21:44:53.945] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243094,"visualMode":"0"}
+[2025-11-15 21:44:53.948] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243094,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:54.003] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.6,""humidity"":54.5,""co2"":847,""light"":"bad"}
+[2025-11-15 21:44:54.005] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.6,""humidity"":54.5,""co2"":847,""light"":"bad"}" -q 1
+[2025-11-15 21:44:55.049] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243095,"visualMode":"0"}
+[2025-11-15 21:44:55.052] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243095,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:55.090] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":28.5,""humidity"":47.6,""co2"":1298,""light"":"bad"}
+[2025-11-15 21:44:55.093] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":28.5,""humidity"":47.6,""co2"":1298,""light"":"bad"}" -q 1
+[2025-11-15 21:44:56.132] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243096,"visualMode":"0"}
+[2025-11-15 21:44:56.135] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243096,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:56.165] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":20.9,""humidity"":47.2,""co2"":861,""light"":"good"}
+[2025-11-15 21:44:56.169] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":20.9,""humidity"":47.2,""co2"":861,""light"":"good"}" -q 1
+[2025-11-15 21:44:57.201] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243097,"visualMode":"0"}
+[2025-11-15 21:44:57.205] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243097,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:57.238] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24.5,""humidity"":75.7,""co2"":1423,""light"":"bad"}
+[2025-11-15 21:44:57.241] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24.5,""humidity"":75.7,""co2"":1423,""light"":"bad"}" -q 1
+[2025-11-15 21:44:58.284] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243098,"visualMode":"0"}
+[2025-11-15 21:44:58.285] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243098,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:58.316] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":15.1,""humidity"":69.3,""co2"":1089,""light"":"good"}
+[2025-11-15 21:44:58.320] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":15.1,""humidity"":69.3,""co2"":1089,""light"":"good"}" -q 1
+[2025-11-15 21:44:59.392] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243099,"visualMode":"0"}
+[2025-11-15 21:44:59.397] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243099,"visualMode":"0"}" -q 1
+[2025-11-15 21:44:59.432] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":29.6,""humidity"":46.1,""co2"":1796,""light"":"good"}
+[2025-11-15 21:44:59.434] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":29.6,""humidity"":46.1,""co2"":1796,""light"":"good"}" -q 1
+[2025-11-15 21:45:00.512] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243100,"visualMode":"0"}
+[2025-11-15 21:45:00.514] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243100,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:00.547] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":16.9,""humidity"":59,""co2"":511,""light"":"bad"}
+[2025-11-15 21:45:00.550] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":16.9,""humidity"":59,""co2"":511,""light"":"bad"}" -q 1
+[2025-11-15 21:45:01.587] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243102,"visualMode":"0"}
+[2025-11-15 21:45:01.589] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243102,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:01.632] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":28.2,""humidity"":33.6,""co2"":1238,""light"":"good"}
+[2025-11-15 21:45:01.635] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":28.2,""humidity"":33.6,""co2"":1238,""light"":"good"}" -q 1
+[2025-11-15 21:45:02.683] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243103,"visualMode":"0"}
+[2025-11-15 21:45:02.686] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243103,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:02.727] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":15.3,""humidity"":53.6,""co2"":426,""light"":"good"}
+[2025-11-15 21:45:02.729] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":15.3,""humidity"":53.6,""co2"":426,""light"":"good"}" -q 1
+[2025-11-15 21:45:03.775] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243104,"visualMode":"0"}
+[2025-11-15 21:45:03.779] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243104,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:03.815] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25.3,""humidity"":47.1,""co2"":1408,""light"":"good"}
+[2025-11-15 21:45:03.819] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25.3,""humidity"":47.1,""co2"":1408,""light"":"good"}" -q 1
+[2025-11-15 21:45:04.879] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243105,"visualMode":"0"}
+[2025-11-15 21:45:04.883] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243105,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:04.920] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":23.6,""humidity"":31.8,""co2"":1278,""light"":"good"}
+[2025-11-15 21:45:04.924] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":23.6,""humidity"":31.8,""co2"":1278,""light"":"good"}" -q 1
+[2025-11-15 21:45:05.961] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243106,"visualMode":"0"}
+[2025-11-15 21:45:05.964] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243106,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:06.014] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":27.1,""humidity"":42,""co2"":707,""light"":"bad"}
+[2025-11-15 21:45:06.017] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":27.1,""humidity"":42,""co2"":707,""light"":"bad"}" -q 1
+[2025-11-15 21:45:07.061] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243107,"visualMode":"0"}
+[2025-11-15 21:45:07.061] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243107,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:07.099] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":18.2,""humidity"":52.6,""co2"":1725,""light"":"good"}
+[2025-11-15 21:45:07.106] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":18.2,""humidity"":52.6,""co2"":1725,""light"":"good"}" -q 1
+[2025-11-15 21:45:08.149] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243108,"visualMode":"0"}
+[2025-11-15 21:45:08.154] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243108,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:08.190] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":21.9,""humidity"":73.6,""co2"":902,""light"":"bad"}
+[2025-11-15 21:45:08.192] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":21.9,""humidity"":73.6,""co2"":902,""light"":"bad"}" -q 1
+[2025-11-15 21:45:09.237] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243109,"visualMode":"0"}
+[2025-11-15 21:45:09.241] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243109,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:09.313] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":24.3,""humidity"":34.6,""co2"":1679,""light"":"good"}
+[2025-11-15 21:45:09.315] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":24.3,""humidity"":34.6,""co2"":1679,""light"":"good"}" -q 1
+[2025-11-15 21:45:10.365] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243110,"visualMode":"0"}
+[2025-11-15 21:45:10.370] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243110,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:10.410] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":19.2,""humidity"":67.5,""co2"":1793,""light"":"good"}
+[2025-11-15 21:45:10.413] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":19.2,""humidity"":67.5,""co2"":1793,""light"":"good"}" -q 1
+[2025-11-15 21:45:11.453] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243111,"visualMode":"0"}
+[2025-11-15 21:45:11.456] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243111,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:11.488] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":27.3,""humidity"":34.5,""co2"":1024,""light"":"good"}
+[2025-11-15 21:45:11.490] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":27.3,""humidity"":34.5,""co2"":1024,""light"":"good"}" -q 1
+[2025-11-15 21:45:12.528] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243112,"visualMode":"0"}
+[2025-11-15 21:45:12.535] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243112,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:12.562] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":28.5,""humidity"":49.5,""co2"":1825,""light"":"bad"}
+[2025-11-15 21:45:12.569] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":28.5,""humidity"":49.5,""co2"":1825,""light"":"bad"}" -q 1
+[2025-11-15 21:45:13.609] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243114,"visualMode":"0"}
+[2025-11-15 21:45:13.612] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243114,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:13.644] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.4,""humidity"":76.9,""co2"":1191,""light"":"bad"}
+[2025-11-15 21:45:13.646] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.4,""humidity"":76.9,""co2"":1191,""light"":"bad"}" -q 1
+[2025-11-15 21:45:14.680] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243115,"visualMode":"0"}
+[2025-11-15 21:45:14.685] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243115,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:14.713] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":26.6,""humidity"":55.9,""co2"":1013,""light"":"bad"}
+[2025-11-15 21:45:14.716] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":26.6,""humidity"":55.9,""co2"":1013,""light"":"bad"}" -q 1
+[2025-11-15 21:45:15.759] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243116,"visualMode":"0"}
+[2025-11-15 21:45:15.764] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243116,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:15.800] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":20.8,""humidity"":41.2,""co2"":1354,""light"":"good"}
+[2025-11-15 21:45:15.802] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":20.8,""humidity"":41.2,""co2"":1354,""light"":"good"}" -q 1
+[2025-11-15 21:45:16.864] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243117,"visualMode":"0"}
+[2025-11-15 21:45:16.867] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243117,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:16.908] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":18.6,""humidity"":45.6,""co2"":1577,""light"":"good"}
+[2025-11-15 21:45:16.911] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":18.6,""humidity"":45.6,""co2"":1577,""light"":"good"}" -q 1
+[2025-11-15 21:45:17.957] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243118,"visualMode":"0"}
+[2025-11-15 21:45:17.960] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243118,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:17.990] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.4,""humidity"":38.2,""co2"":1411,""light"":"bad"}
+[2025-11-15 21:45:17.990] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.4,""humidity"":38.2,""co2"":1411,""light"":"bad"}" -q 1
+[2025-11-15 21:45:19.031] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243119,"visualMode":"0"}
+[2025-11-15 21:45:19.034] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243119,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:19.063] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":23.1,""humidity"":45.6,""co2"":734,""light"":"bad"}
+[2025-11-15 21:45:19.063] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":23.1,""humidity"":45.6,""co2"":734,""light"":"bad"}" -q 1
+[2025-11-15 21:45:20.115] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243120,"visualMode":"0"}
+[2025-11-15 21:45:20.118] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243120,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:20.153] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.5,""humidity"":41.5,""co2"":1253,""light"":"bad"}
+[2025-11-15 21:45:20.156] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.5,""humidity"":41.5,""co2"":1253,""light"":"bad"}" -q 1
+[2025-11-15 21:45:21.191] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243121,"visualMode":"0"}
+[2025-11-15 21:45:21.195] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243121,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:21.227] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":27.8,""humidity"":31.5,""co2"":1918,""light"":"bad"}
+[2025-11-15 21:45:21.231] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":27.8,""humidity"":31.5,""co2"":1918,""light"":"bad"}" -q 1
+[2025-11-15 21:45:22.283] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243122,"visualMode":"0"}
+[2025-11-15 21:45:22.285] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243122,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:22.316] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":23.4,""humidity"":38.3,""co2"":488,""light"":"bad"}
+[2025-11-15 21:45:22.318] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":23.4,""humidity"":38.3,""co2"":488,""light"":"bad"}" -q 1
+[2025-11-15 21:45:23.358] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243123,"visualMode":"0"}
+[2025-11-15 21:45:23.362] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243123,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:23.393] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":20.7,""humidity"":48.7,""co2"":528,""light"":"good"}
+[2025-11-15 21:45:23.393] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":20.7,""humidity"":48.7,""co2"":528,""light"":"good"}" -q 1
+[2025-11-15 21:45:24.447] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243124,"visualMode":"0"}
+[2025-11-15 21:45:24.449] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243124,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:24.488] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25.6,""humidity"":75.6,""co2"":1888,""light"":"good"}
+[2025-11-15 21:45:24.491] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25.6,""humidity"":75.6,""co2"":1888,""light"":"good"}" -q 1
+[2025-11-15 21:45:25.524] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243125,"visualMode":"0"}
+[2025-11-15 21:45:25.526] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243125,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:25.556] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.3,""humidity"":52.1,""co2"":522,""light"":"bad"}
+[2025-11-15 21:45:25.559] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.3,""humidity"":52.1,""co2"":522,""light"":"bad"}" -q 1
+[2025-11-15 21:45:26.594] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243127,"visualMode":"0"}
+[2025-11-15 21:45:26.597] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243127,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:26.633] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":20.3,""humidity"":42.2,""co2"":405,""light"":"bad"}
+[2025-11-15 21:45:26.637] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":20.3,""humidity"":42.2,""co2"":405,""light"":"bad"}" -q 1
+[2025-11-15 21:45:27.682] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243128,"visualMode":"0"}
+[2025-11-15 21:45:27.685] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243128,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:27.715] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":26.4,""humidity"":44.9,""co2"":591,""light"":"bad"}
+[2025-11-15 21:45:27.719] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":26.4,""humidity"":44.9,""co2"":591,""light"":"bad"}" -q 1
+[2025-11-15 21:45:28.756] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243129,"visualMode":"0"}
+[2025-11-15 21:45:28.759] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243129,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:28.791] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":25.9,""humidity"":63.5,""co2"":1642,""light"":"bad"}
+[2025-11-15 21:45:28.794] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":25.9,""humidity"":63.5,""co2"":1642,""light"":"bad"}" -q 1
+[2025-11-15 21:45:29.830] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243130,"visualMode":"0"}
+[2025-11-15 21:45:29.833] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243130,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:29.867] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":29.8,""humidity"":63.4,""co2"":457,""light"":"good"}
+[2025-11-15 21:45:29.869] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":29.8,""humidity"":63.4,""co2"":457,""light"":"good"}" -q 1
+[2025-11-15 21:45:30.916] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243131,"visualMode":"0"}
+[2025-11-15 21:45:30.919] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243131,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:30.953] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":19.1,""humidity"":68.5,""co2"":1788,""light"":"good"}
+[2025-11-15 21:45:30.955] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":19.1,""humidity"":68.5,""co2"":1788,""light"":"good"}" -q 1
+[2025-11-15 21:45:32.007] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243132,"visualMode":"0"}
+[2025-11-15 21:45:32.010] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243132,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:32.053] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":18.8,""humidity"":40.6,""co2"":1628,""light"":"bad"}
+[2025-11-15 21:45:32.057] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":18.8,""humidity"":40.6,""co2"":1628,""light"":"bad"}" -q 1
+[2025-11-15 21:45:33.095] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243133,"visualMode":"0"}
+[2025-11-15 21:45:33.097] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243133,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:33.129] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":16.2,""humidity"":56.7,""co2"":1814,""light"":"bad"}
+[2025-11-15 21:45:33.132] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":16.2,""humidity"":56.7,""co2"":1814,""light"":"bad"}" -q 1
+[2025-11-15 21:45:34.167] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243134,"visualMode":"0"}
+[2025-11-15 21:45:34.171] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243134,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:34.207] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":20.7,""humidity"":37.5,""co2"":1475,""light"":"bad"}
+[2025-11-15 21:45:34.209] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":20.7,""humidity"":37.5,""co2"":1475,""light"":"bad"}" -q 1
+[2025-11-15 21:45:35.257] [Success] [Attendance] Success | Topic: /classroom/face | Msg: {"deviceId":"001","faceId":1,"timestamp":1763243135,"visualMode":"0"}
+[2025-11-15 21:45:35.260] [Debug] [Attendance] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/face" -m "{"deviceId":"001","faceId":1,"timestamp":1763243135,"visualMode":"0"}" -q 1
+[2025-11-15 21:45:35.297] [Success] [Environment] Success | Topic: /classroom/sensors | Msg: {""temperature"":17.3,""humidity"":31.2,""co2"":976,""light"":"bad"}
+[2025-11-15 21:45:35.301] [Debug] [Environment] Cmd: -h 127.0.0.1 -p 1883 -t "/classroom/sensors" -m "{""temperature"":17.3,""humidity"":31.2,""co2"":976,""light"":"bad"}" -q 1
+[2025-11-15 21:45:36.310] [Info] 
+Ctrl+C detected. Exit...
+[2025-11-15 21:45:36.316] [Info] 
+=== Send Statistics ===
+[2025-11-15 21:45:36.319] [Info] Total:  | Success:  | Failed: 
+[2025-11-15 21:45:36.321] [Info] Attendance:  | Environment: 
+[2025-11-15 21:45:36.323] [Info] Log saved to: .\mqtt_publish_logs\mqtt_pub_20251115_214120.log
+[2025-11-15 21:45:36.325] [Info] === Script Stopped ===

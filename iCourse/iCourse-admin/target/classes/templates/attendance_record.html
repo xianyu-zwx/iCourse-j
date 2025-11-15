@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>iCourse</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" th:href="@{/Sys/css/layui.css}">
+    <link rel="stylesheet" th:href="@{/Sys/css/sign.css}">
+    <link rel="stylesheet" th:href="@{/Sys/js/css/modules/layui-icon-extend/iconfont.css}">
+    <link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+    <link rel="stylesheet" th:href="@{/Sys/css/font.css}">
+    <link rel="stylesheet" th:href="@{/Sys/css/xadmin.css}">
+    <script type="text/javascript" th:src="@{/Sys/js/jquery-3.3.1.min.js}"></script>
+    <script th:src="@{/Sys/lib/layui/layui.js}" charset="utf-8"></script>
+    <script type="text/javascript" th:src="@{/Sys/js/xadmin.js}"></script>
+    <script type="text/javascript" th:src ="@{/Sys/js/jquery.table2excel.js}"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="x-body">
+    <div class="layui-row">
+        <div class="demoTable" style="margin-bottom: 20px; font-size: 1.3rem; font-weight: 600; color: #64ffda;">
+            搜索姓名：
+            <div class="layui-inline">
+                <input class="layui-input" name="id" id="demoReload" autocomplete="off">
+            </div>
+            <button class="layui-btn" data-type="reload" ><i class="layui-icon">&#xe615;</i></button>
+        </div>
+    </div>
+    <table id="test" lay-filter="test"></table>
+</div>
+</body>
+<script >
+    var documentWidth = $(document).width();
+    layui.use('table', function(){
+        var table = layui.table;
+        // 渲染考勤表格
+        var tableIns = table.render({
+            elem: '#test'  //绑定table表格
+            ,id:'stuInfo'  //表格唯一标识，用于刷新
+            ,method:'post'
+            ,url: 'attendance/list' //后台接口路径
+            ,page: {
+                layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'],
+                groups: 1,
+                first: false,
+                last: false,
+                limit:5,
+                limits:[10,20,50]
+            }
+            ,cols: [
+                [
+                    {type: 'checkbox'},
+                    {field:'name', title:'姓名'},
+                    {field: 'checkInTime', title:'时间'},
+                    {field: 'deviceId',title: '设备ID'},
+                    {field:'faceId',title:'人脸ID'},
+                ]
+            ]
+        });
+
+        // 搜索功能
+        var $ = layui.$, active = {
+            reload: function(){
+                var demoReload = $('#demoReload');
+                table.reload('stuInfo', {
+                    page: { curr: 1 },
+                    url:'attendance/list',
+                    where: { key: { id: demoReload.val() } },
+                    method:'post'
+                });
+            }
+        };
+        $('.demoTable .layui-btn').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+
+        // 新增：考勤记录自动刷新（每5秒）
+        setInterval(function(){
+            table.reload('stuInfo', {
+                // 保持当前页码和搜索条件，仅刷新数据
+                page: { curr: tableIns.config.page.curr },
+                where: { key: { id: $('#demoReload').val() } },
+                method: 'post'
+            });
+        }, 5000); // 1000毫秒 = 1秒
+    });
+
+    function exportTable(){
+        location.href="/Sys/export";
+    }
+    layui.use(['form','layer','table','upload'], function(){
+        var table = layui.table
+            ,form = layui.form,upload = layui.upload;
+        var uploadInst = upload.render({
+            elem: '#uploadExcel'
+            , exts: "xls"
+            ,url: '/Sys/ImportStu'
+        });
+    });
+</script>
+</html>

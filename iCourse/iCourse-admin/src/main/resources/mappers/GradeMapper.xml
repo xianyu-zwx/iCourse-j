@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hbgc.course.admin.dao.GradeMapper">
+
+    <!-- 结果集映射：数据库字段与实体类字段对应 -->
+    <resultMap id="gradeResultMap" type="com.hbgc.course.admin.entity.Grade">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="major" column="major"/>
+        <result property="department" column="department"/>
+        <result property="college" column="college"/>
+        <result property="monitor" column="monitor"/>
+        <result property="learningCommittee" column="learning_committee"/>
+    </resultMap>
+
+    <!-- 按名称查询班级（精确匹配） -->
+    <select id="getGradeByName" resultMap="gradeResultMap">
+        select * from t_grade where name = #{gradeName}
+    </select>
+
+    <!-- 分页查询所有班级 -->
+    <select id="findGradeByPage" resultMap="gradeResultMap">
+        select * from t_grade limit #{offset}, #{limit}
+    </select>
+
+    <!-- 按名称分页查询班级（模糊匹配） -->
+    <select id="findGradeByName" resultMap="gradeResultMap">
+        select * from t_grade where name like concat('%', #{name}, '%') limit #{offset}, #{limit}
+    </select>
+
+    <!-- 查询所有班级总数 -->
+    <select id="gradeCount" resultType="Integer">
+        select count(*) from t_grade
+    </select>
+
+    <!-- 按名称查询班级总数（模糊匹配） -->
+    <select id="countGradeByName" resultType="Integer">
+        select count(*) from t_grade where name like concat('%', #{name}, '%')
+    </select>
+
+    <!-- 新增班级 -->
+    <insert id="insertGrade" parameterType="com.hbgc.course.admin.entity.Grade">
+        insert into t_grade (name, major, department, college, monitor, learning_committee)
+        values (#{name}, #{major}, #{department}, #{college}, #{monitor}, #{learningCommittee})
+    </insert>
+
+    <!-- 更新班级信息 -->
+    <update id="updateGrade" parameterType="com.hbgc.course.admin.entity.Grade">
+        update t_grade
+        set name = #{name},
+            major = #{major},
+            department = #{department},
+            college = #{college},
+            monitor = #{monitor},
+            learning_committee = #{learningCommittee}
+        where id = #{id}
+    </update>
+
+    <!-- 删除班级 -->
+    <delete id="deleteGrade" parameterType="int">
+        delete from t_grade where id = #{id}
+    </delete>
+
+    <!-- 查询所有班级 -->
+    <select id="selectAll" resultMap="gradeResultMap">
+        select * from t_grade
+    </select>
+
+    <!-- 按ID查询班级 -->
+    <select id="getGradeById" parameterType="int" resultMap="gradeResultMap">
+        select * from t_grade where id = #{id}
+    </select>
+
+</mapper>

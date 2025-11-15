@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hbgc.course.admin.dao.EnvironmentMapper">
+
+    <resultMap id="environmentMapper" type="com.hbgc.course.admin.entity.EnvironmentData">
+        <result property="temperature" column="temperature" />
+        <result property="humidity" column="humidity" />
+        <result property="co2" column="co2" />
+        <result property="lightCondition" column="light_condition" />
+    </resultMap>
+
+    <insert id="insertEnvironmentData" parameterType="com.hbgc.course.admin.entity.EnvironmentData">
+        insert into t_environment (temperature, humidity, co2, light_condition)
+        values (#{temperature}, #{humidity}, #{co2}, #{lightCondition})
+    </insert>
+
+    <select id="getLatestEnvironmentData" resultType="com.hbgc.course.admin.entity.EnvironmentData">
+        SELECT * FROM t_environment ORDER BY id DESC LIMIT 1
+    </select>
+
+
+</mapper>
+
+

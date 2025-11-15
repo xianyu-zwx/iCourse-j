@@ -1,0 +1,207 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" th:src="@{/Sys/js/jquery-3.3.1.min.js}"></script>
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/Sys/css1/main.css}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" th:src="@{/Sys/js/test.js}"></script>
+</head>
+<body>
+<div th:fragment="content" style="flex: 1;">
+    <div class="cards-row">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">环境传感器</div>
+                <div class="card-icon">
+                    <i class="fas fa-temperature-high"></i>
+                </div>
+            </div>
+            <div class="sensor-data">
+                <div class="data-item">
+                    <div class="data-label">温度</div>
+                    <div class="data-value" id="env-temp" th:text="${envData?.temperature ?: '0°C'}"></div>
+                </div>
+                <div class="data-item">
+                    <div class="data-label">湿度</div>
+                    <div class="data-value" id="env-humi" th:text="${envData?.humidity ?: '0%'}"></div>
+                </div>
+                <div class="data-item">
+                    <div class="data-label">CO2浓度</div>
+                    <div class="data-value" id="env-co2" th:text="${envData?.co2 ?: '0 ppm'}"></div>
+                </div>
+                <div class="data-item">
+                    <div class="data-label">光照强度</div>
+                    <div class="data-value" id="env-light" th:text="${envData?.lightCondition ?: '0 lux'}"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">摄像头指标</div>
+                <div class="card-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+            </div>
+            <div class="sensor-data">
+                <div class="data-item">
+                    <div class="data-label">帧率</div>
+                    <div class="data-value" id="cam-fps" th:text="${cameraData?.fps ?: '24 FPS'}">24 FPS</div>
+                </div>
+                <div class="data-item">
+                    <div class="data-label">识别率</div>
+                    <div class="data-value" id="cam-recognition" th:text="${cameraData?.recognitionRate ?: '92%'}">92%</div>
+                </div>
+                <div class="data-item">
+                    <div class="data-label">检测人数</div>
+                    <div class="data-value" id="cam-count" th:text="${cameraData?.detectionCount ?: '3'}">3</div>
+                </div>
+                <div class="data-item">
+                    <div class="data-label">温度</div>
+                    <div class="data-value" id="env-temp" th:text="${envData?.temperature ?: '25.6°C'}">25.6°C</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">毫米波雷达</div>
+                <div class="card-icon">
+                    <i class="fas fa-wave-square"></i>
+                </div>
+            </div>
+            <div class="sensor-data">
+                <div class="data-item">
+                    <div class="data-label">状态</div>
+                    <div class="data-value" id="radar-status">检测中</div>
+                </div>
+                <div class="data-item">
+                    <div class="data-label">距离</div>
+                    <div class="data-value" id="radar-distance">1.8m</div>
+                </div>
+                <div class="data-item">
+                    <div class="data-label">心率</div>
+                    <div class="data-value" id="radar-heart">72 BPM</div>
+                </div>
+                <div class="data-item">
+                    <div class="data-label">呼吸率</div>
+                    <div class="data-value" id="radar-breath">16 BPM</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cards-row">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">今日考勤统计</div>
+                <div class="card-icon">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="attendanceChart"></canvas>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">系统状态</div>
+                <div class="card-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+            </div>
+            <div class="sensor-data">
+                <div class="data-item">
+                    <div class="data-label">运行时间</div>
+                    <div class="data-value" id="uptime" ></div>
+                </div>
+                <div class="data-item">
+                    <div class="data-label">WiFi强度</div>
+                    <div class="data-value" id="wifi-strength" th:text="${systemData?.wifiStrength ?: '-52 dBm'}">-52 dBm</div>
+                </div>
+                <div class="data-item">
+                    <div class="data-label">存储空间</div>
+                    <div class="data-value" id="storage" th:text="${systemData?.storage ?: '1.2/16 GB'}">1.2/16 GB</div>
+                </div>
+                <div class="data-item">
+                    <div class="data-label">今日考勤</div>
+                    <div class="data-value" id="today-attendance" th:text="${attendanceData?.todayAttendance ?: '24/30'}">24/30</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 视频流 -->
+    <div class="table-container">
+        <div class="table-header">
+            <div class="table-title">摄像头实时画面</div>
+            <div>
+                <button class="btn btn-outline" id="refresh-video">
+                    <i class="fas fa-sync"></i> 刷新画面
+                </button>
+            </div>
+        </div>
+        <div class="video-container">
+            <div class="video-feed">
+                <video id="camera-feed" autoplay muted playsinline th:attr="src=${videoUrl ?: 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4'}"></video>
+            </div>
+            <div class="video-controls">
+                <div class="progress-container">
+                    <div class="progress-bar" id="video-progress"></div>
+                </div>
+                <button class="btn" id="capture-btn">
+                    <i class="fas fa-camera"></i> 捕捉人脸
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        sendGetRequest();
+        updateTime();
+        // 初始化环境数据并设置定时刷新（每1秒一次）
+        fetchEnvironmentData();
+        setInterval(fetchEnvironmentData, 1000);
+        setInterval(updateTime, 1000);
+    });
+
+    // 更新系统时间
+    function updateTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const timeString = `${hours}:${minutes}:${seconds}`;
+        $('#uptime').text(timeString);
+    }
+
+    // 实时获取并更新环境传感器数据
+    function fetchEnvironmentData() {
+        // 调用后端获取最新环境数据的接口
+        $.get("/course/getLatestEnvironmentData")
+            .done(function(data) {
+                // 更新页面显示
+                if (data.temperature !== undefined) {
+                    $('#env-temp').text(data.temperature + '°C');
+                }
+                if (data.humidity !== undefined) {
+                    $('#env-humi').text(data.humidity + '%');
+                }
+                if (data.co2 !== undefined) {
+                    $('#env-co2').text(data.co2 + ' ppm');
+                }
+                if (data.lightCondition !== undefined) {
+                    $('#env-light').text(data.lightCondition + ' lux');
+                }
+            })
+            .fail(function() {
+                console.error("获取环境数据失败");
+            });
+    }
+</script>
+</body>
+</html>

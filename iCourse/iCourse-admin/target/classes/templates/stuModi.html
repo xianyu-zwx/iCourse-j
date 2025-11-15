@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>编辑学生信息</title>
+  <!-- 修正资源路径端口和文件名拼写 -->
+  <link rel="stylesheet" th:href="@{/Sys/css/layui.css}">
+  <link rel="stylesheet" th:href="@{/Sys/css/xadmin.css}">
+  <script th:src="@{/Sys/lib/layui/layui.js}" charset="utf-8"></script>
+  <script type="text/javascript" th:src="@{/Sys/js/jquery-3.3.1.min.js}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" th:src="@{/Sys/js/test.js}"></script>
+  <style>
+    .layui-form-item { margin-bottom: 15px; }
+    .error提示 { color: #ff4d4f; padding: 10px; text-align: center; }
+  </style>
+</head>
+<body>
+<div class="layui-container" style="margin-top: 20px;">
+  <div class="layui-card">
+    <div class="layui-card-header">编辑学生信息</div>
+    <div class="layui-card-body">
+      <div th:if="${error}" class="error提示" th:text="${error}"></div>
+
+      <form class="layui-form" lay-filter="studentForm">
+        <input type="hidden" name="stuNo" id="stuNo" th:value="${student?.stuNo}">
+
+        <div class="layui-form-item">
+          <label class="layui-form-label">学号</label>
+          <div class="layui-input-block">
+            <input type="text" id="showStuNo" th:value="${student?.stuNo}" class="layui-input" readonly>
+          </div>
+        </div>
+
+        <div class="layui-form-item">
+          <label class="layui-form-label">姓名</label>
+          <div class="layui-input-block">
+            <input type="text" name="name" id="name" th:value="${student?.name}"
+                   lay-verify="required" placeholder="请输入姓名" class="layui-input">
+<!--            <input type="text" name="name" id="name"-->
+<!--                   lay-verify="required" placeholder="请输入姓名" class="layui-input">-->
+          </div>
+        </div>
+
+        <div class="layui-form-item">
+          <label class="layui-form-label">性别</label>
+          <div class="layui-input-block">
+            <input type="radio" name="gender" value="男" title="男" th:checked="${student?.gender == '男'}">
+            <input type="radio" name="gender" value="女" title="女" th:checked="${student?.gender == '女'}">
+<!--            <input type="radio" name="gender" value="男" title="男" >-->
+<!--            <input type="radio" name="gender" value="女" title="女">-->
+          </div>
+        </div>
+
+        <div class="layui-form-item">
+          <label class="layui-form-label">班级</label>
+          <div class="layui-input-block">
+            <input type="text" name="grade" id="grade" th:value="${student?.grade}"
+                   lay-verify="required" placeholder="请输入班级" class="layui-input">
+<!--            <input type="text" name="grade" id="grade" -->
+<!--                   lay-verify="required" placeholder="请输入班级" class="layui-input">-->
+          </div>
+        </div>
+
+        <div class="layui-form-item">
+          <label class="layui-form-label">人脸ID</label>
+          <div class="layui-input-block">
+            <input type="text" name="faceId" id="faceId" th:value="${student?.faceId}"
+                   placeholder="请输入人脸ID" class="layui-input">
+<!--            <input type="text" name="faceId" id="faceId" -->
+<!--                   placeholder="请输入人脸ID" class="layui-input">-->
+          </div>
+        </div>
+
+        <div class="layui-form-item">
+          <label class="layui-form-label">QQ号</label>
+          <div class="layui-input-block">
+            <input type="text" name="qq" id="qq" th:value="${student?.qq}"
+                   placeholder="请输入QQ号" class="layui-input">
+<!--            <input type="text" name="qq" id="qq" -->
+<!--                   placeholder="请输入QQ号" class="layui-input">-->
+          </div>
+        </div>
+
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="submitBtn">保存修改</button>
+            <button type="button" class="layui-btn layui-btn-primary" onclick="history.back()">返回</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- 修正资源路径：端口统一为8888，文件名拼写错误 -->
+<script>
+  layui.use(['form', 'layer'], function() {
+    var form = layui.form;
+    var layer = layui.layer;
+
+    // 修改学生信息模态框触发事件
+    function openEditModal(stuNo) {
+      // 关键修复：参数名必须为num，与后端@RequestParam("num")匹配
+      $.get("/student/getStuByNo", { num: stuNo }, function(data) {
+        if (data && data.stuNo) {
+          // 填充表单数据
+          $("#stuNo").val(data.stuNo);
+          $("#name").val(data.name);
+          $("#age").val(data.age);
+          $("#gender").val(data.gender);
+          $("#grade").val(data.grade);
+          $("#qq").val(data.qq);
+          $('#editModal').modal('show');
+        } else {
+          alert("未获取到学生信息");
+        }
+      }).fail(function() {
+        alert("请求失败，请重试");
+      });
+    }
+
+    // 页面加载时验证学生信息
+    $(function() {
+      var stuNo = $('#stuNo').val();
+      if (!stuNo) {
+        layer.msg('未获取到学生信息', {icon: 2});
+        return;
+      }
+      // // 验证学生信息有效性
+      // $.get('/course/student/getStuByNo', {num: stuNo}, function(data) {
+      //   if (!data || !data.stuNo) {
+      //     layer.msg('学生信息已失效，请返回列表页重新选择', {icon: 2});
+      //   }
+      // }).fail(function() {
+      //   layer.msg('网络错误，无法验证学生信息', {icon: 2});
+      // });
+    });
+
+    // 表单提交处理
+    form.on('submit(submitBtn)', function(data) {
+      sendModifyStudentMessage(data);
+      return false;
+    });
+  });
+</script>
+</body>
+</html>

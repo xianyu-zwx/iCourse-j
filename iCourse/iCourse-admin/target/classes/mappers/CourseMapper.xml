@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hbgc.course.admin.dao.CourseMapper">
+
+    <select id="getCourseByName" resultType="com.hbgc.course.admin.po.CoursePO">
+        select * from t_course where name = #{name}
+    </select>
+
+    <insert id="batchInsertCourseSchedule2">
+        insert into t_grade_course_schedule(grade_id, course_id, week, day, period)
+        <foreach collection="list" item="item" index="index" separator="UNION ALL">
+            (
+                select
+                #{item.gradeId},
+                #{item.courseId},
+                #{item.week},
+                #{item.day},
+                #{item.period}
+                from t_grade_course_schedule
+                where not exists(
+                    select id from t_grade_course_schedule
+                    where grade_id=#{item.gradeId} and course_id=#{item.courseId}
+                      and week=#{item.week} and day=#{item.day} and period=#{item.period}
+                )
+            )
+        </foreach>
+    </insert>
+
+    <insert id="batchInsertCourseSchedule">
+        insert IGNORE into t_grade_course_schedule(grade_id, course_id, week, day, period)
+        values
+        <foreach collection="list" item="item" index="" separator=",">
+            (#{item.gradeId}, #{item.courseId},#{item.week},#{item.day},#{item.period})
+        </foreach>
+    </insert>
+
+</mapper>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>添加班级</title>
+    <link rel="stylesheet" th:href="@{/Sys/css/layui.css}">
+    <script th:src="@{/Sys/lib/layui/layui.js}"></script>
+</head>
+<body>
+<form class="layui-form" style="padding: 20px;">
+    <div class="layui-form-item">
+        <label class="layui-form-label">班级名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="name" required lay-verify="required"
+                   placeholder="如：23gb物联1" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">专业</label>
+        <div class="layui-input-block">
+            <input type="text" name="major" required lay-verify="required"
+                   placeholder="如：物联网工程" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">系部</label>
+        <div class="layui-input-block">
+            <input type="text" name="department" required lay-verify="required"
+                   placeholder="如：电气与电子工程系" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">学院</label>
+        <div class="layui-input-block">
+            <input type="text" name="college" required lay-verify="required"
+                   placeholder="如：湖北工业大学工程技术学院" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">班长</label>
+        <div class="layui-input-block">
+            <input type="text" name="monitor" placeholder="可选，填写姓名" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">学习委员</label>
+        <div class="layui-input-block">
+            <input type="text" name="learningCommittee" placeholder="可选，填写姓名" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="submitForm">提交</button>
+            <button type="button" class="layui-btn layui-btn-primary" onclick="parent.layer.closeAll()">取消</button>
+        </div>
+    </div>
+</form>
+
+<script>
+    layui.use('form', function(){
+        var form = layui.form;
+        var layer = layui.layer;
+
+        // 监听表单提交
+        form.on('submit(submitForm)', function(data){
+            $.post("/course/grade/add", data.field, function(res){
+                if(res === 'success'){
+                    layer.msg('添加成功', {icon: 1});
+                    // 关闭弹窗并刷新父页面表格
+                    setTimeout(function(){
+                        parent.layer.closeAll();
+                        parent.layui.table.reload('gradeTable');
+                    }, 1000);
+                } else {
+                    layer.msg('添加失败（班级名称可能已存在）', {icon: 2});
+                }
+            });
+            return false;  // 阻止默认表单提交
+        });
+    });
+</script>
+</body>
+</html>

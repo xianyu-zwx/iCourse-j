@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hbgc.course.admin.dao.StudentMapper">
+
+    <!-- 定义一个resultMap用于结果映射 -->
+    <resultMap id="studentMapper" type="com.hbgc.course.admin.entity.Student">
+        <result property="stuNo" column="stu_no" />
+        <result property="gender" column="sex" />
+        <result property="grade" column="grade_id" />
+        <result property="faceId" column="face_id" />
+    </resultMap>
+
+    <select id="getStudentById" parameterType="int" resultMap="studentMapper">
+        SELECT * FROM t_student WHERE id = #{id}
+    </select>
+
+    <select id="getStudentByNo" parameterType="String" resultMap="studentMapper">
+        SELECT * FROM t_student WHERE stu_no = #{num}
+    </select>
+
+    <select id="findStudentByPage" resultMap="studentMapper">
+        SELECT s.id, s.stu_no, s.name, s.sex, s.age, g.name AS grade_name, s.qq, s.face_id
+        FROM t_student s
+                 LEFT JOIN t_grade g ON s.grade_id = g.id
+            LIMIT #{offset}, #{limit}
+    </select>
+
+    <select id="studentCount" resultType="Integer">
+        SELECT COUNT(*) FROM t_student
+    </select>
+
+    <select id="findStuByName" resultMap="studentMapper">
+        SELECT s.id, s.stu_no, s.name, s.sex, s.age, g.name AS grade_name, s.qq, s.face_id
+        FROM t_student s
+                 LEFT JOIN t_grade g ON s.grade_id = g.id
+        WHERE s.name LIKE CONCAT('%', #{name}, '%')
+            LIMIT #{offset}, #{limit}
+    </select>
+
+    <delete id="deleteStudent" parameterType="int">
+        DELETE FROM t_student WHERE stu_no = #{stuNo}
+    </delete>
+
+    <update id="updateStu" parameterType="com.hbgc.course.admin.entity.Student">
+        UPDATE t_student
+        SET stu_no = #{stuNo},
+            name = #{name},
+            sex = #{gender},
+            grade_id = #{grade},
+            face_id = #{faceId},
+            qq = #{qq}
+        WHERE stu_no = #{stuNo}
+    </update>
+
+    <!-- 添加学生 -->
+    <insert id="insertStudent" parameterType="com.hbgc.course.admin.entity.Student">
+        INSERT INTO t_student (stu_no, name, age, sex, grade_id, qq, face_id)
+        VALUES (#{stuNo}, #{name}, #{age}, #{gender}, #{grade}, #{qq}, #{faceId})
+    </insert>
+
+</mapper>

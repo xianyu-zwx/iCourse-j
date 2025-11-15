@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>iCourse</title>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="stylesheet" th:href="@{/Sys/css/layui.css}">
+    <link rel="stylesheet" th:href="@{/Sys/css/sign.css}">
+    <link rel="stylesheet"
+          th:href="@{/Sys/js/css/modules/layui-icon-extend/iconfont.css}">
+    <link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon"/>
+    <link rel="stylesheet" th:href="@{/Sys/css/font.css}">
+    <link rel="stylesheet" th:href="@{/Sys/css/xadmin.css}">
+    <script type="text/javascript" th:src="@{/Sys/js/jquery-3.3.1.min.js}"></script>
+    <script th:src="@{/Sys/lib/layui/layui.js}" charset="utf-8"></script>
+    <script type="text/javascript" th:src="@{/Sys/js/xadmin.js}"></script>
+
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/Sys/css1/main.css}">
+</head>
+<body>
+
+
+<!-- 侧边导航栏 -->
+<!--<div class="sidebar">-->
+<!--    <div class="logo">-->
+<!--        <h1>智能考勤系统</h1>-->
+<!--    </div>-->
+
+<!--    <ul class="nav-links">-->
+<!--        <li>-->
+<!--            <a href="#" class="active" data-page="dashboard" th:onclick="|loadPageFragment('dashboard')|">-->
+<!--                <i class="fas fa-home"></i>-->
+<!--                <span class="nav-text">仪表盘</span>-->
+<!--            </a>-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--</div>-->
+
+
+<!-- 顶部开始 -->
+<!--<div class="container">-->
+<!--    <div class="logo">-->
+<!--        <a th:href="@{./index.html}"><img border="0" th:src="@{/Sys/images/hs.jpg}">-->
+<!--            学生成绩管理系统</a>-->
+<!--    </div>-->
+<!--    <div class="left_open">-->
+<!--        <i title="展开左侧栏" class="iconfont">&#xe699;</i>-->
+<!--    </div>-->
+<!--    <ul class="layui-nav right" lay-filter="">-->
+<!--        <li class="layui-nav-item"><a href="javascript:;">当前用户：<span-->
+<!--                th:text="${session.user.username}"></span><img-->
+<!--                th:src="@{/uploads/{filename}(filename=${session.photo})}"-->
+<!--                th:if="${session.user.username!='admin'}"/>-->
+<!--            <img th:src="@{/Sys/images/my1.png}" th:if="${session.user.username=='admin'}"/></a>-->
+<!--            <dl class="layui-nav-child">-->
+<!--                &lt;!&ndash; 二级菜单 &ndash;&gt;-->
+<!--                <dd>-->
+<!--                    <a onclick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a>-->
+<!--                </dd>-->
+<!--                <dd>-->
+<!--                    <a th:href="@{loginPage}">切换帐号</a>-->
+<!--                </dd>-->
+<!--                <dd>-->
+<!--                    <a href="loginOut">退出</a>-->
+<!--                </dd>-->
+<!--            </dl>-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--</div>-->
+<!-- 顶部结束 -->
+<!-- 中部开始 -->
+<!-- 左侧菜单开始 -->
+<div class="sidebar">
+    <div class="logo">
+        <h1>智能考勤系统</h1>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a th:href="@{dashboard}">
+               <i class="fas fa-home"></i>
+<!--        <i class="iconfont">&#xe6a7;</i>-->
+<!--                <span class="nav-text">仪表盘</span>-->
+               <cite class="nav-text">仪表盘</cite>
+            </a>
+        </li>
+
+        <li>
+            <a href="#" data-page="students" th:onclick="|loadPageFragment('students')|">
+                <i class="fas fa-user-graduate"></i>
+                <cite class="nav-text">学生管理</cite>
+            </a>
+        </li>
+
+        <li>
+            <a href="#" data-page="classes" th:onclick="|loadPageFragment('classes')|">
+                <i class="fas fa-chalkboard"></i>
+                <span class="nav-text">班级管理</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" data-page="teachers" th:onclick="|loadPageFragment('teachers')|">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span class="nav-text">教师管理</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" data-page="courses" th:onclick="|loadPageFragment('courses')|">
+                <i class="fas fa-book"></i>
+                <span class="nav-text">课程管理</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" data-page="schedules" th:onclick="|loadPageFragment('schedules')|">
+                <i class="fas fa-calendar-alt"></i>
+                <span class="nav-text">课程安排</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" data-page="attendance" th:onclick="|loadPageFragment('attendance')|">
+                <i class="fas fa-clipboard-check"></i>
+                <span class="nav-text">考勤记录</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" data-page="radar" th:onclick="|loadPageFragment('radar')|">
+                <i class="fas fa-wave-square"></i>
+                <span class="nav-text">毫米波雷达</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" data-page="files" th:onclick="|loadPageFragment('files')|">
+                <i class="fas fa-folder-open"></i>
+                <span class="nav-text">文件管理</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" data-page="settings" th:onclick="|loadPageFragment('settings')|">
+                <i class="fas fa-cog"></i>
+                <span class="nav-text">系统设置</span>
+            </a>
+        </li>
+
+    </ul>
+    <div id="side-nav" style="width: 100%; height: 57%">
+        <ul id="nav">
+            <!--弹出菜单处理效果在xadmin.js中110行-->
+            <li>
+                <a href="javascript:;"> <i class="iconfont">&#xe726;</i>
+                    <cite>用户管理</cite> 
+					<i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a _href="stuInfo"> <i class="iconfont">&#xe6a7;</i>
+                        <cite>已注册学生管理</cite>
+                    </a></li>
+                    <li><a _href="teacherInfo"> <i class="iconfont">&#xe6a7;</i>
+                        <cite>已注册教师管理</cite>
+                    </a></li>
+                </ul>
+            </li>
+
+            <li><a href="javascript:;"> <i class="iconfont layui-icon-extend-chengji"></i> <cite>接口调试</cite>
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+                <ul class="sub-menu">
+                    <li><a _href="http://localhost:8888/course/swagger-ui/index.html#/"> <i
+                            class="iconfont">&#xe6a7;</i> <cite>学生接口调试</cite>
+                    </a></li>
+                    <li><a _href="http://localhost:8090/swagger-ui.html#/"> <i
+                            class="iconfont">&#xe6a7;</i> <cite>教师接口调试</cite>
+                    </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li><a href="javascript:;"> <i class="iconfont">&#xe6b8;</i>
+                <cite>检查成绩</cite> <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+                <ul class="sub-menu">
+                    <li><a _href="claCouScore"> <i class="iconfont">&#xe6a7;</i>
+                        <cite>班级科目成绩</cite>
+                    </a></li>
+                </ul>
+            <li>
+        </ul>
+    </div>
+    <div th:style="'background-image:url(./Sys/images/bg2.jpg); width:100%; height:43%;bottom: 0;background-repeat: no-repeat;'"></div>
+</div>
+<!-- <div class="x-slide_left"></div> -->
+<!-- 左侧菜单结束 -->
+<!-- 右侧主体开始 -->
+<div class="page-content">
+    <div class="layui-tab tab" lay-filter="xbs_tab" lay-allowclose="false">
+        <ul class="layui-tab-title">
+            <li class="home"><i class="layui-icon">&#xe68e;</i>我的桌面</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <iframe th:src='@{welcome}' frameborder="0" scrolling="yes"
+                        class="x-iframe"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-content-bg"></div>
+<!-- 右侧主体结束 -->
+<!-- 中部结束 -->
+<!-- 底部开始 -->
+<div class="footer">
+    <div class="copyright" style="text-align: center;">Copyright WonderfulMorty</div>
+</div>
+<!-- 底部结束 -->
+<script>
+
+    // 加载Thymeleaf片段
+    function loadPageFragment(pageId) {
+        // 更新活动菜单项
+        updateActiveMenu(pageId);
+
+        // 更新标题
+        document.querySelector('.header-title h2').textContent =
+            document.querySelector(`.nav-links a[data-page="${pageId}"] .nav-text`).textContent;
+        document.querySelector('.header-title p').textContent = getPageDescription(pageId);
+
+        // 显示加载指示器
+        const contentDiv = document.getElementById('content');
+        contentDiv.innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                </div>
+            `;
+
+        // 通过AJAX加载页面片段
+        axios.get(`/fragments/${pageId}`)
+            .then(response => {
+                contentDiv.innerHTML = response.data;
+                initPage(pageId);
+            })
+            .catch(error => {
+                console.error('加载页面失败:', error);
+                contentDiv.innerHTML = `<div class="error">加载页面失败，请重试</div>`;
+            });
+    }
+
+    //百度统计可去掉
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>
