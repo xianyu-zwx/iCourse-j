@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>课程安排</title>
+  <link rel="stylesheet" th:href="@{/Sys/css/layui.css}">
+  <link rel="stylesheet" th:href="@{/Sys/css/xadmin.css}">
+  <script th:src="@{/Sys/lib/layui/layui.js}" charset="utf-8"></script>
+  <script type="text/javascript" th:src="@{/Sys/js/jquery-3.3.1.min.js}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div class="layui-container">
+        <span class="layui-breadcrumb">
+            <a th:href="@{index}">首页</a>
+            <a href="">教学安排</a>
+            <a><cite>课程安排</cite></a>
+        </span>
+  <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+    <i class="layui-icon" style="line-height:30px">ဂ</i>
+  </a>
+</div>
+<div class="x-body">
+  <div class="layui-row">
+    <div class="demoTable" style="margin-bottom: 20px">
+      搜索安排：
+      <div class="layui-inline">
+        <input class="layui-input" name="id" id="demoReload" autocomplete="off" placeholder="请输入课程名称">
+      </div>
+      <button class="layui-btn" data-type="reload"><i class="layui-icon">&#xe615;</i></button>
+    </div>
+  </div>
+  <xblock>
+    <button class="layui-btn" onclick="scheduleAdd()"><i class="layui-icon"></i>添加</button>
+  </xblock>
+  <table id="scheduleTable" lay-filter="scheduleTable"></table>
+</div>
+
+<!-- 操作列模板 -->
+<script type="text/html" id="scheduleBarDemo">
+  <a class="layui-btn layui-btn-xs" lay-event="edit">
+    <i class="layui-icon">&#xe642;</i>修改
+  </a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">
+    <i class="layui-icon">&#xe640;</i>删除
+  </a>
+</script>
+
+<script>
+  layui.use('table', function () {
+    var table = layui.table;
+    var layer = layui.layer;
+
+    // 表格渲染
+    var tableIns = table.render({
+      elem: '#scheduleTable',
+      id: 'scheduleInfo',
+      method: 'post',
+      url: '/course/schedule/getScheduleSimpleInfo',
+      page: {
+        layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'],
+        groups: 1
+      },
+      cols: [
+        [
+          {type: 'checkbox'},
+          {field: 'scheduleId', title: '安排ID', sort: true},
+          {field: 'courseName', title: '课程名称'},
+          {field: 'className', title: '班级'},
+          {field: 'teacherName', title: '教师'},
+          {field: 'week', title: '周次'},
+          {field: 'day', title: '星期'},
+          {field: 'section', title: '节次'},
+          {field: 'classroom', title: '教室'},
+          {field: 'operation', title: '操作', toolbar: '#scheduleBarDemo', width: 160}
+        ]
+      ],
+      done: function(res, curr, count){
+        if(res.code !== 0){
+          layer.msg('数据加载失败：' + res.msg, {icon: 2});
+        }
+      }
+    });
+
+    // 搜索功能
+    var $ = layui.$, active = {
+      reload: function () {
+        var demoReload = $('#demoReload');
+        table.reload('scheduleInfo', {
+          page: {
+            curr: 1
+          },
+          url: '/course/schedule/getScheduleByCourseName',
+          where: {
+            key: {
+              id: demoReload.val()
+            }
+          },
+          method: 'post'
+        });
+      }
+    };
+
+    $('.demoTable .layui-btn').on('click', function () {
+      var type = $(this).data('type');
+      active[type] ? active[type].call(this) : '';
+    });
+
+    // 监听工具条事件
+    table.on('tool(scheduleTable)', function (obj) {
+      var data = obj.data;
+      if (obj.event === 'del') {
+        layer.confirm('确认要删除【' + data.courseName + '】的安排吗？', function (index) {
+          $.ajax({
+            url: '/course/schedule/delete',
+            data: {id: data.scheduleId},
+            type: 'post',
+            success: function (res) {
+              if (res === 'success') {
+                obj.del();
+                layer.msg('删除成功！', {icon: 1, time: 1500});
+              } else {
+                layer.msg('删除失败：' + res, {icon: 2});
+              }
+            },
+            error: function (xhr) {
+              layer.msg('服务器异常：' + xhr.status, {icon: 2});
+            }
+          });
+          layer.close(index);
+        });
+      } else if (obj.event === 'edit') {
+        layer.open({
+          type: 2,
+          title: '修改课程安排',
+          skin: 'layui-layer-molv',
+          shadeClose: false,
+          shade: 0.8,
+          area: ['700px', '550px'],
+          offset: '6%',
+          scrollbar: false,
+          content: '/course/schedule/scheduleModify?id=' + data.scheduleId,
+          end: function () {
+            tableIns.reload();
+          }
+        });
+      }
+    });
+  });
+
+  // 添加课程安排弹窗
+  function scheduleAdd() {
+    layer.open({
+      type: 2,
+      title: '添加课程安排',
+      skin: 'layui-layer-lan',
+      shadeClose: false,
+      shade: 0.8,
+      area: ['700px', '500px'],
+      content: '/course/schedule/scheduleAdd',
+      end: function () {
+        layui.table.reload('scheduleInfo');
+      }
+    });
+  }
+</script>
+</body>
+</html>

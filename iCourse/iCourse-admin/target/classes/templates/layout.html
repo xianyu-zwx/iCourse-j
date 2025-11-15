@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能考勤系统</title>
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css}">
+	<link rel="stylesheet" th:href="@{/Sys/css1/main.css}">
+    <script th:src="@{https://cdn.jsdelivr.net/npm/chart.js}"></script>
+    <script th:src="@{https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js}"></script>
+    <script type="text/javascript" th:src="@{/Sys/js/xadmin.js}"></script>
+ <!-- -->
+</head>
+<body>
+    <!-- 通知区域 -->
+    <div class="notification" id="notification">
+        <i class="fas fa-info-circle"></i>
+        <span id="notification-message">操作成功</span>
+    </div>
+    
+    <!-- 侧边导航栏 -->
+    <div class="sidebar">
+        <div class="logo">
+            <h1>智能考勤系统</h1>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="#" class="active" data-page="dashboard" th:onclick="|loadPageFragment('dashboard')|">
+                    <i class="fas fa-home"></i>
+                    <span class="nav-text">仪表盘</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-page="students" th:onclick="|loadPageFragment('students')|">
+                    <i class="fas fa-user-graduate"></i>
+                    <span class="nav-text">学生管理</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-page="classes" th:onclick="|loadPageFragment('classes')|">
+                    <i class="fas fa-chalkboard"></i>
+                    <span class="nav-text">班级管理</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-page="teachers" th:onclick="|loadPageFragment('teachers')|">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span class="nav-text">教师管理</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-page="courses" th:onclick="|loadPageFragment('courses')|">
+                    <i class="fas fa-book"></i>
+                    <span class="nav-text">课程管理</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-page="schedules" th:onclick="|loadPageFragment('schedules')|">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="nav-text">课程安排</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-page="attendance" th:onclick="|loadPageFragment('attendance')|">
+                    <i class="fas fa-clipboard-check"></i>
+                    <span class="nav-text">考勤记录</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-page="radar" th:onclick="|loadPageFragment('radar')|">
+                    <i class="fas fa-wave-square"></i>
+                    <span class="nav-text">毫米波雷达</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-page="files" th:onclick="|loadPageFragment('files')|">
+                    <i class="fas fa-folder-open"></i>
+                    <span class="nav-text">文件管理</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-page="settings" th:onclick="|loadPageFragment('settings')|">
+                    <i class="fas fa-cog"></i>
+                    <span class="nav-text">系统设置</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 主内容区域 -->
+    <div class="main-content">
+        <!-- 头部 -->
+        <div class="header">
+            <div class="header-title">
+                <h2>系统仪表盘</h2>
+                <p>实时监控系统状态和传感器数据</p>
+            </div>
+            <div class="header-info">
+                <div class="status-badge">
+                    <span class="status-indicator online" id="wifi-status"></span>
+                    <span id="wifi-text">WiFi 已连接</span>
+                </div>
+                <div class="status-badge">
+                    <span class="status-indicator online" id="mqtt-status"></span>
+                    <span id="mqtt-text">MQTT 已连接</span>
+                </div>
+                <div class="status-badge">
+                    <i class="fas fa-microchip"></i>
+                    <span>CPU: <span id="cpu-usage">42%</span></span>
+                </div>
+                <div class="status-badge">
+                    <i class="fas fa-memory"></i>
+                    <span>内存: <span id="memory-usage">65%</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <iframe th:src='@{dashboard}' frameborder="0" scrolling="yes"
+                        class="x-iframe"></iframe>
+            </div>
+        </div>
+
+        <!-- 动态内容区域 -->
+        <div id="content">
+            <!-- Thymeleaf 片段将在这里加载 -->
+            <div th:replace="fragments/dashboard :: dashboard"></div>
+        </div>
+    </div>
+
+    <script>
+        // 系统状态
+        const systemState = {
+            wifiConnected: true,
+            mqttConnected: true,
+            videoStream: null
+        };
+
+        // 页面切换功能
+        function updateActiveMenu(pageId) {
+            document.querySelectorAll('.nav-links a').forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('data-page') === pageId) {
+                    a.classList.add('active');
+                }
+            });
+        }
+        
+        function getPageDescription(pageId) {
+            const descriptions = {
+                'dashboard': '实时监控系统状态和传感器数据',
+                'students': '管理学生信息和注册状态',
+                'classes': '管理班级信息和学生分配',
+                'teachers': '管理教师信息和课程分配',
+                'courses': '管理课程信息和教学计划',
+                'schedules': '管理课程安排和时间表',
+                'attendance': '查看和管理考勤记录',
+                'radar': '毫米波雷达实时数据和记录',
+                'files': '管理SD卡上的文件和文档',
+                'settings': '系统设置和配置选项'
+            };
+            return descriptions[pageId] || '管理页面';
+        }
+        
+        // 加载Thymeleaf片段
+        function loadPageFragment(pageId) {
+            // 更新活动菜单项
+            updateActiveMenu(pageId);
+            
+            // 更新标题
+            document.querySelector('.header-title h2').textContent = 
+                document.querySelector(`.nav-links a[data-page="${pageId}"] .nav-text`).textContent;
+            document.querySelector('.header-title p').textContent = getPageDescription(pageId);
+            
+            // 显示加载指示器
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                </div>
+            `;
+            
+            // 通过AJAX加载页面片段
+            axios.get(`/fragments/${pageId}`)
+                .then(response => {
+                    contentDiv.innerHTML = response.data;
+                    initPage(pageId);
+                })
+                .catch(error => {
+                    console.error('加载页面失败:', error);
+                    contentDiv.innerHTML = `<div class="error">加载页面失败，请重试</div>`;
+                });
+        }
+        
+        // 初始化页面特定功能
+        function initPage(pageId) {
+            switch(pageId) {
+                case 'dashboard':
+                    initDashboard();
+                    break;
+                case 'students':
+                    initStudents();
+                    break;
+                case 'attendance':
+                    initAttendance();
+                    break;
+                case 'files':
+                    initFiles();
+                    break;
+                case 'radar':
+                    initRadar();
+                    break;
+                default:
+                    // 其他页面初始化
+            }
+        }
+        
+        // 仪表盘初始化
+        function initDashboard() {
+            initCharts();
+            fetchRealTimeData();
+            initVideoStream();
+            
+            // 绑定事件
+            document.getElementById('refresh-video')?.addEventListener('click', initVideoStream);
+            document.getElementById('capture-btn')?.addEventListener('click', captureFace);
+        }
+        
+        // 学生管理初始化
+        function initStudents() {
+            fetchStudents();
+            
+            // 绑定事件
+            document.getElementById('addStudentBtn')?.addEventListener('click', () => {
+                document.getElementById('student-form').scrollIntoView({behavior: 'smooth'});
+            });
+            document.getElementById('save-student')?.addEventListener('click', addStudent);
+            document.getElementById('reset-student')?.addEventListener('click', () => {
+                document.getElementById('student-form').reset();
+            });
+        }
+        
+        // 考勤管理初始化
+        function initAttendance() {
+            fetchAttendanceRecords();
+            
+            // 绑定事件
+            document.getElementById('export-attendance')?.addEventListener('click', exportAttendanceData);
+            document.getElementById('print-attendance')?.addEventListener('click', () => {
+                showNotification('打印功能已调用', 'info');
+                window.print();
+            });
+        }
+        
+        // 文件管理初始化
+        function initFiles() {
+            refreshFileList();
+            
+            // 绑定事件
+            document.getElementById('start-upload')?.addEventListener('click', handleFileUpload);
+            document.getElementById('uploadBtn')?.addEventListener('click', () => {
+                document.getElementById('fileUpload').click();
+            });
+            document.getElementById('refresh-files')?.addEventListener('click', refreshFileList);
+        }
+        
+        // 雷达管理初始化
+        function initRadar() {
+            fetchRadarData();
+            
+            // 绑定事件
+            document.getElementById('refresh-radar')?.addEventListener('click', fetchRadarData);
+        }
+        
+        // 图表初始化
+        function initCharts() {
+            // 考勤统计饼图
+            const attendanceCtx = document.getElementById('attendanceChart')?.getContext('2d');
+            if (attendanceCtx) {
+                window.attendanceChart = new Chart(attendanceCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['正常', '迟到', '早退', '缺勤'],
+                        datasets: [{
+                            data: [75, 10, 5, 10],
+                            backgroundColor: [
+                                '#64ffda',
+                                '#f8e16c',
+                                '#ffa62b',
+                                '#ff6b6b'
+                            ],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'right',
+                                labels: {
+                                    color: '#ccd6f6',
+                                    font: {
+                                        size: 12
+                                    }
+                                }
+                            },
+                            tooltip: {
+                                backgroundColor: 'rgba(10, 25, 47, 0.9)',
+                                titleColor: '#64ffda',
+                                bodyColor: '#ccd6f6',
+                                borderColor: 'rgba(100, 255, 218, 0.2)',
+                                borderWidth: 1
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // 每日考勤饼图
+            const dailyAttendanceCtx = document.getElementById('dailyAttendanceChart')?.getContext('2d');
+            if (dailyAttendanceCtx) {
+                window.dailyAttendanceChart = new Chart(dailyAttendanceCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['已到', '迟到', '缺勤'],
+                        datasets: [{
+                            data: [80, 7, 13],
+                            backgroundColor: [
+                                '#64ffda',
+                                '#f8e16c',
+                                '#ff6b6b'
+                            ],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'right',
+                                labels: {
+                                    color: '#ccd6f6',
+                                    font: {
+                                        size: 12
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // 雷达图表
+            const radarCtx = document.getElementById('radarChart')?.getContext('2d');
+            if (radarCtx) {
+                window.radarChart = new Chart(radarCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['14:20', '14:25', '14:30', '14:35', '14:40', '14:45', '14:50'],
+                        datasets: [
+                            {
+                                label: '心率 (BPM)',
+                                data: [70, 71, 72, 73, 72, 71, 70],
+                                borderColor: '#64ffda',
+                                backgroundColor: 'rgba(100, 255, 218, 0.1)',
+                                tension: 0.4,
+                                fill: true
+                            },
+                            {
+                                label: '呼吸率 (BPM)',
+                                data: [15, 16, 16, 17, 16, 16, 15],
+                                borderColor: '#f8e16c',
+                                backgroundColor: 'rgba(248, 225, 108, 0.1)',
+                                tension: 0.4,
+                                fill: true
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                grid: {
+                                    color: 'rgba(204, 214, 246, 0.1)'
+                                },
+                                ticks: {
+                                    color: '#8892b0'
+                                }
+                            },
+                            y: {
+                                grid: {
+                                    color: 'rgba(204, 214, 246, 0.1)'
+                                },
+                                ticks: {
+                                    color: '#8892b0'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: '#ccd6f6'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+        
+        // 从后端获取实时数据
+        async function fetchRealTimeData() {
+            try {
+                const response = await axios.get('/api/system/data');
+                const data = response.data;
+                
+                // 更新环境数据
+                document.querySelector('#env-temp')?.textContent = 
+                    data.environment.temperature.toFixed(1) + '°C';
+                document.querySelector('#env-humi')?.textContent = 
+                    data.environment.humidity.toFixed(0) + '%';
+                document.querySelector('#env-co2')?.textContent = 
+                    data.environment.co2.toFixed(0) + ' ppm';
+                
+                // 更新摄像头数据
+                document.querySelector('#cam-fps')?.textContent = 
+                    data.camera.fps + ' FPS';
+                document.querySelector('#cam-recognition')?.textContent = 
+                    data.camera.recognition_rate + '%';
+                document.querySelector('#cam-count')?.textContent = 
+                    data.camera.detection_count;
+                
+                // 更新雷达数据
+                document.querySelector('#radar-distance')?.textContent = 
+                    data.radar.distance.toFixed(1) + 'm';
+                document.querySelector('#radar-heart')?.textContent = 
+                    data.radar.heart_rate + ' BPM';
+                document.querySelector('#radar-breath')?.textContent = 
+                    data.radar.breathing_rate + ' BPM';
+                document.querySelector('#radar-status')?.textContent = 
+                    data.radar.status ? '检测中' : '无目标';
+                
+                // 更新系统状态
+                document.querySelector('#uptime')?.textContent = 
+                    formatTime(data.system.uptime);
+                document.querySelector('#wifi-strength')?.textContent = 
+                    '-65 dBm'; // 需要额外数据
+                document.querySelector('#storage')?.textContent = 
+                    data.system.storage_used.toFixed(1) + '/' + data.system.storage_total.toFixed(1) + ' GB';
+                
+                // 更新WiFi和MQTT状态指示器
+                document.querySelector('#wifi-status')?.className = data.system.wifi ? 
+                    'status-indicator online' : 'status-indicator offline';
+                document.querySelector('#wifi-text')?.textContent = data.system.wifi ? 
+                    'WiFi 已连接' : 'WiFi 未连接';
+                document.querySelector('#mqtt-status')?.className = data.system.mqtt ? 
+                    'status-indicator online' : 'status-indicator offline';
+                document.querySelector('#mqtt-text')?.textContent = data.system.mqtt ? 
+                    'MQTT 已连接' : 'MQTT 未连接';
+                
+            } catch (error) {
+                console.error('获取实时数据失败:', error);
+                showNotification('获取实时数据失败', 'error');
+            }
+        }
+        
+        // 格式化运行时间（秒转为HH:MM:SS）
+        function formatTime(seconds) {
+            if (seconds === 0) return '00:00:00';
+            const h = Math.floor(seconds / 3600);
+            const m = Math.floor((seconds % 3600) / 60);
+            const s = Math.floor(seconds % 60);
+            return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        }
+        
+        // 显示通知
+        function showNotification(message, type = 'info', duration = 3000) {
+            const notification = document.getElementById('notification');
+            const messageEl = document.getElementById('notification-message');
+            
+            // 设置通知内容
+            messageEl.textContent = message;
+            
+            // 设置通知类型
+            notification.className = 'notification';
+            notification.classList.add(type);
+            
+            // 显示通知
+            notification.classList.add('show');
+            
+            // 自动隐藏
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, duration);
+        }
+        
+        // 文件上传处理
+        function handleFileUpload() {
+            const fileInput = document.getElementById('fileUpload');
+            const pathSelect = document.getElementById('uploadPath');
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+            const uploadProgress = document.getElementById('upload-progress');
+            
+            if (fileInput.files.length === 0) {
+                showNotification('请选择要上传的文件', 'warning');
+                return;
+            }
+            
+            const file = fileInput.files[0];
+            const path = pathSelect.value;
+            
+            // 显示进度条
+            uploadProgress.style.display = 'flex';
+            progressBar.style.width = '0%';
+            progressText.textContent = '0%';
+            
+            // 创建FormData对象
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('path', path);
+            
+            // 发送文件到后端
+            axios.post('/api/upload', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                },
+                onUploadProgress: progressEvent => {
+                    const progress = Math.round((progressEvent.loaded / progressEvent.total) * 100);
+                    progressBar.style.width = `${progress}%`;
+                    progressText.textContent = `${progress}%`;
+                }
+            })
+            .then(response => {
+                showNotification(`文件 ${file.name} 上传成功`, 'success');
+                uploadProgress.style.display = 'none';
+                fileInput.value = '';
+                
+                // 刷新文件列表
+                refreshFileList();
+            })
+            .catch(error => {
+                showNotification('文件上传失败', 'error');
+                console.error('文件上传失败:', error);
+                uploadProgress.style.display = 'none';
+            });
+        }
+        
+        // 刷新文件列表
+        async function refreshFileList() {
+            try {
+                const response = await axios.get('/api/files');
+                const files = response.data;
+                
+                const fileList = document.getElementById('file-list');
+                if (!fileList) return;
+                
+                fileList.innerHTML = '';
+                
+                files.forEach(file => {
+                    const fileType = file.name.split('.').pop();
+                    const iconClass = getFileIcon(fileType);
+                    
+                    const li = document.createElement('li');
+                    li.className = 'file-item';
+                    li.innerHTML = `
+                        <div class="file-info">
+                            <div class="file-icon">
+                                <i class="${iconClass}"></i>
+                            </div>
+                            <div class="file-details">
+                                <div class="file-name">${file.name}</div>
+                                <div class="file-size">${formatFileSize(file.size)}</div>
+                            </div>
+                        </div>
+                        <div class="file-actions-btns">
+                            <button class="btn btn-outline download-file" data-path="${file.path}">
+                                <i class="fas fa-download"></i>
+                            </button>
+                            <button class="btn btn-outline delete-file" data-path="${file.path}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    `;
+                    fileList.appendChild(li);
+                });
+                
+                // 绑定下载和删除事件
+                document.querySelectorAll('.download-file').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const filePath = this.getAttribute('data-path');
+                        downloadFile(filePath);
+                    });
+                });
+                
+                document.querySelectorAll('.delete-file').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const filePath = this.getAttribute('data-path');
+                        const fileName = this.closest('.file-item').querySelector('.file-name').textContent;
+                        deleteFile(filePath, fileName);
+                    });
+                });
+                
+                showNotification('文件列表已刷新', 'success');
+                
+            } catch (error) {
+                console.error('获取文件列表失败:', error);
+                showNotification('获取文件列表失败', 'error');
+            }
+        }
+        
+        // 格式化文件大小
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+        
+        // 下载文件
+        function downloadFile(filePath) {
+            const fileName = filePath.split('/').pop();
+            showNotification(`开始下载文件: ${fileName}`, 'info');
+            
+            axios({
+                url: `/api/download?path=${encodeURIComponent(filePath)}`,
+                method: 'GET',
+                responseType: 'blob',
+            })
+            .then(response => {
+                const url = window.URL.createObjectURL(new Blob([response.data]));
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', fileName);
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                showNotification(`文件 ${fileName} 下载完成`, 'success');
+            })
+            .catch(error => {
+                console.error('文件下载失败:', error);
+                showNotification('文件下载失败', 'error');
+            });
+        }
+        
+        // 删除文件
+        function deleteFile(filePath, fileName) {
+            if (confirm(`确定要删除 ${fileName} 吗?`)) {
+                axios.delete(`/api/files?path=${encodeURIComponent(filePath)}`)
+                    .then(() => {
+                        showNotification(`文件 ${fileName} 已删除`, 'success');
+                        refreshFileList();
+                    })
+                    .catch(error => {
+                        console.error('文件删除失败:', error);
+                        showNotification('文件删除失败', 'error');
+                    });
+            }
+        }
+        
+        // 获取文件图标
+        function getFileIcon(fileType) {
+            const icons = {
+                'jpg': 'fas fa-file-image',
+                'jpeg': 'fas fa-file-image',
+                'png': 'fas fa-file-image',
+                'gif': 'fas fa-file-image',
+                'csv': 'fas fa-file-csv',
+                'xls': 'fas fa-file-excel',
+                'xlsx': 'fas fa-file-excel',
+                'pdf': 'fas fa-file-pdf',
+                'doc': 'fas fa-file-word',
+                'docx': 'fas fa-file-word',
+                'json': 'fas fa-file-code',
+                'txt': 'fas fa-file-alt',
+                'zip': 'fas fa-file-archive'
+            };
+            return icons[fileType.toLowerCase()] || 'fas fa-file';
+        }
+        
+        // 导出考勤数据
+        function exportAttendanceData() {
+            showNotification('正在导出考勤数据...', 'info');
+            
+            const date = new Date().toISOString().slice(0,10).replace(/-/g, '');
+            const filename = `attendance_${date}.csv`;
+            
+            axios({
+                url: '/api/attendance/export',
+                method: 'GET',
+                responseType: 'blob',
+            })
+            .then(response => {
+                const url = window.URL.createObjectURL(new Blob([response.data]));
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', filename);
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                showNotification('考勤数据导出成功', 'success');
+            })
+            .catch(error => {
+                console.error('导出考勤数据失败:', error);
+                showNotification('导出考勤数据失败', 'error');
+            });
+        }
+        
+        // 获取学生列表
+        async function fetchStudents() {
+            try {
+                const response = await axios.get('/api/students');
+                const students = response.data;
+                
+                const tableBody = document.getElementById('student-table-body');
+                if (!tableBody) return;
+                
+                tableBody.innerHTML = '';
+                
+                students.forEach(student => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${student.studentId}</td>
+                        <td>${student.name}</td>
+                        <td>${student.className || '未分配'}</td>
+                        <td>${student.faceId || '未注册'}</td>
+                        <td>
+                            <span class="status-badge">
+                                <span class="status-indicator ${student.faceId ? 'online' : 'offline'}"></span>
+                                ${student.faceId ? '已注册' : '未注册'}
+                            </span>
+                        </td>
+                        <td>
+                            <button class="action-btn edit-btn" data-id="${student.id}">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn delete-btn" data-id="${student.id}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+                
+                // 绑定编辑和删除事件
+                document.querySelectorAll('.edit-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const studentId = this.getAttribute('data-id');
+                        editStudent(studentId);
+                    });
+                });
+                
+                document.querySelectorAll('.delete-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const studentId = this.getAttribute('data-id');
+                        deleteStudent(studentId);
+                    });
+                });
+                
+            } catch (error) {
+                console.error('获取学生列表失败:', error);
+                showNotification('获取学生列表失败', 'error');
+            }
+        }
+        
+        // 编辑学生
+        function editStudent(studentId) {
+            // 实际项目中应从后端获取学生详细信息
+            showNotification('编辑学生功能', 'info');
+            document.getElementById('student-form').scrollIntoView({behavior: 'smooth'});
+        }
+        
+        // 删除学生
+        function deleteStudent(studentId) {
+            if (confirm('确定要删除这个学生吗?')) {
+                axios.delete(`/api/students/${studentId}`)
+                    .then(() => {
+                        showNotification('学生已删除', 'success');
+                        fetchStudents();
+                    })
+                    .catch(error => {
+                        console.error('删除学生失败:', error);
+                        showNotification('删除学生失败', 'error');
+                    });
+            }
+        }
+        
+        // 添加学生
+        function addStudent() {
+            const studentId = document.getElementById('studentId').value;
+            const studentName = document.getElementById('studentName').value;
+            const classId = document.getElementById('studentClass').value;
+            const faceId = document.getElementById('faceId').value;
+            
+            if (!studentId || !studentName) {
+                showNotification('请填写学号和姓名', 'warning');
+                return;
+            }
+            
+            const studentData = {
+                studentId,
+                name: studentName,
+                classId,
+                faceId
+            };
+            
+            axios.post('/api/students', studentData)
+                .then(() => {
+                    showNotification(`学生 ${studentName} 添加成功`, 'success');
+                    document.getElementById('student-form').reset();
+                    fetchStudents();
+                })
+                .catch(error => {
+                    console.error('添加学生失败:', error);
+                    showNotification('添加学生失败', 'error');
+                });
+        }
+        
+        // 获取考勤记录
+        async function fetchAttendanceRecords() {
+            try {
+                const response = await axios.get('/api/attendance');
+                const records = response.data;
+                
+                const tableBody = document.getElementById('attendance-table-body');
+                if (!tableBody) return;
+                
+                tableBody.innerHTML = '';
+                
+                records.forEach(record => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${record.timestamp}</td>
+                        <td>${record.studentName}</td>
+                        <td>${record.studentId}</td>
+                        <td>${record.className}</td>
+                        <td>
+                            <span class="status-badge">
+                                <span class="status-indicator ${record.status === 'normal' ? 'online' : 'warning'}"></span>
+                                ${record.status === 'normal' ? '正常' : '迟到'}
+                            </span>
+                        </td>
+                        <td>${record.confidence}%</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+                
+                // 更新统计信息
+                document.getElementById('attendance-count')?.textContent = 
+                    `${records.length}/30`;
+                document.getElementById('late-count')?.textContent = 
+                    records.filter(r => r.status !== 'normal').length;
+                
+            } catch (error) {
+                console.error('获取考勤记录失败:', error);
+                showNotification('获取考勤记录失败', 'error');
+            }
+        }
+        
+        // 获取雷达数据
+        async function fetchRadarData() {
+            try {
+                const response = await axios.get('/api/radar');
+                const radarData = response.data;
+                
+                // 更新实时数据
+                document.getElementById('radar-detection-status')?.textContent = 
+                    radarData.status ? '检测中' : '无目标';
+                document.getElementById('radar-target-distance')?.textContent = 
+                    radarData.distance.toFixed(1) + 'm';
+                document.getElementById('radar-heart-rate')?.textContent = 
+                    radarData.heart_rate + ' BPM';
+                document.getElementById('radar-breathing-rate')?.textContent = 
+                    radarData.breathing_rate + ' BPM';
+                document.getElementById('radar-confidence')?.textContent = 
+                    radarData.confidence + '%';
+                document.getElementById('radar-timestamp')?.textContent = 
+                    new Date(radarData.timestamp).toLocaleString();
+                
+                // 更新历史记录表格
+                const tableBody = document.getElementById('radar-table-body');
+                if (!tableBody) return;
+                
+                tableBody.innerHTML = '';
+                
+                radarData.history.forEach(entry => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${new Date(entry.timestamp).toLocaleTimeString()}</td>
+                        <td>${entry.distance.toFixed(1)}</td>
+                        <td>${entry.heart_rate}</td>
+                        <td>${entry.breathing_rate}</td>
+                        <td>${entry.confidence}%</td>
+                        <td>
+                            <span class="status-badge">
+                                <span class="status-indicator ${entry.status ? 'online' : 'offline'}"></span>
+                                ${entry.status ? '检测中' : '无目标'}
+                            </span>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+                
+                // 更新图表数据
+                if (window.radarChart) {
+                    window.radarChart.data.labels = radarData.history
+                        .slice(-7)
+                        .map(entry => new Date(entry.timestamp).toLocaleTimeString());
+                    
+                    window.radarChart.data.datasets[0].data = radarData.history
+                        .slice(-7)
+                        .map(entry => entry.heart_rate);
+                    
+                    window.radarChart.data.datasets[1].data = radarData.history
+                        .slice(-7)
+                        .map(entry => entry.breathing_rate);
+                    
+                    window.radarChart.update();
+                }
+                
+            } catch (error) {
+                console.error('获取雷达数据失败:', error);
+                showNotification('获取雷达数据失败', 'error');
+            }
+        }
+        
+        // 初始化视频流
+        async function initVideoStream() {
+            try {
+                // 实际项目中应连接到ESP32的视频流URL
+                const videoElement = document.getElementById('camera-feed');
+                if (!videoElement) return;
+                
+                // 模拟视频流 - 实际项目中替换为真实视频源
+                videoElement.src = "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4";
+                
+                videoElement.onloadedmetadata = function() {
+                    console.log("视频流已加载");
+                };
+                
+                videoElement.onerror = function() {
+                    console.error("视频流加载失败");
+                    showNotification('无法加载摄像头画面', 'error');
+                };
+                
+            } catch (error) {
+                console.error('初始化视频流失败:', error);
+                showNotification('初始化视频流失败', 'error');
+            }
+        }
+        
+        // 捕捉人脸
+        function captureFace() {
+            const video = document.getElementById('camera-feed');
+            if (!video) return;
+            
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            
+            // 获取图像数据
+            const imageData = canvas.toDataURL('image/jpeg');
+            
+            // 发送到后端进行人脸识别
+            axios.post('/api/face/capture', { image: imageData })
+                .then(response => {
+                    const result = response.data;
+                    if (result.success) {
+                        showNotification(`人脸捕捉成功: ${result.faceId}`, 'success');
+                        // 可以在这里更新UI或进行其他操作
+                    } else {
+                        showNotification('人脸捕捉失败', 'error');
+                    }
+                })
+                .catch(error => {
+                    console.error('人脸捕捉失败:', error);
+                    showNotification('人脸捕捉失败', 'error');
+                });
+        }
+        
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 设置当前日期
+            const today = new Date();
+            document.getElementById('attendance-date')?.textContent = 
+                `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+            
+            // 初始化仪表盘
+            initDashboard();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hbgc.course.admin.dao.TeacherMapper">
+
+    <!-- 定义一个resultMap用于结果映射 -->
+    <resultMap id="teacherMapper" type="com.hbgc.course.admin.entity.Teacher">
+        <result property="num" column="tea_no" />
+        <result property="gender" column="sex" />
+    </resultMap>
+
+    <select id="getTeacherById" parameterType="int" resultMap="teacherMapper">
+        select * from t_teacher where id=#{id}
+    </select>
+
+    <select id="getTeacherByNo" parameterType="String" resultMap="teacherMapper">
+        select * from t_teacher where tea_no=#{num}
+    </select>
+
+</mapper>

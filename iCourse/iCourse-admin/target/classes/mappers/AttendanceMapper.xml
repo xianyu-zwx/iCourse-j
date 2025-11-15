@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hbgc.course.admin.dao.AttendanceMapper">
+
+    <!-- 定义一个resultMap用于结果映射 -->
+    <resultMap id="attendanceMapper" type="com.hbgc.course.admin.entity.Attendance">
+        <result property="deviceId" column="device_id" />
+        <result property="time" column="time" />
+        <result property="faceId" column="face_id" />
+    </resultMap>
+
+    <select id="getattendanceById" parameterType="int" resultMap="attendanceMapper">
+        select * from t_attendance_record where id=#{id}
+    </select>
+
+    <select id="getattendanceByNo" parameterType="String" resultMap="attendanceMapper">
+        select * from t_attendance_record where device_id=#{num}
+    </select>
+
+    <select id="findAttendanceByPage" resultType="com.hbgc.course.admin.po.AttendancePO">
+        select ar.id, s.name, ar.device_id,  ar.face_id, FROM_UNIXTIME(ar.timestamp, '%Y-%m-%d %H:%i:%s') As checkInTime
+        from t_attendance_record ar
+        left join t_student s on ar.face_id = s.face_id
+        where ar.visual_mode = 1
+        limit #{offset},#{limit}
+    </select>
+
+    <select id="findStuByName" resultMap="attendanceMapper">
+        select *
+        from t_attendance_record
+        where name like CONCAT('%', #{name}, '%') limit #{offset}, #{limit}
+    </select>
+
+
+    <select id="attendanceCount" resultType="Long">
+        select count(*) from t_attendance_record
+    </select>
+
+
+<!--    <insert id="insertattendance" parameterType="com.hbgc.course.admin.po.AttendancePO">-->
+<!--        insert into t_attendance_record(device_id, time) values(#{device_id}, )-->
+<!--    </insert>-->
+
+    <insert id="insertAttendance" parameterType="com.hbgc.course.admin.entity.MqttAttendanceMessage">
+        insert into t_attendance_record (device_id, face_id, timestamp, visual_mode)
+        values (#{deviceId}, #{faceId}, #{timestamp}, #{visualMode})
+    </insert>
+
+</mapper>

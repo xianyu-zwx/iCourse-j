@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>iCourse</title>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="stylesheet" th:href="@{/Sys/css/layui.css}">
+    <link rel="stylesheet" th:href="@{/Sys/css/sign.css}">
+    <link rel="stylesheet"
+          th:href="@{/Sys/js/css/modules/layui-icon-extend/iconfont.css}">
+    <link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon"/>
+    <link rel="stylesheet" th:href="@{/Sys/css/font.css}">
+    <link rel="stylesheet" th:href="@{/Sys/css/xadmin.css}">
+    <script type="text/javascript"
+            th:src="@{/Sys/js/jquery-3.3.1.min.js}"></script>
+    <script th:src="@{/Sys/lib/layui/layui.js}" charset="utf-8"></script>
+    <script type="text/javascript" th:src="@{/Sys/js/xadmin.js}"></script>
+
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/Sys/css1/main.css}">
+    <script type="text/javascript" th:src="@{/Sys/js/main.js}"></script>
+    <script type="text/javascript" th:src="@{/Sys/js/test.js}"></script>
+</head>
+<body>
+<!-- 顶部开始 -->
+<!--<div class="container">-->
+<!--    <div class="logo">-->
+<!--        <a th:href="@{./index.html}"><img border="0" th:src="@{/Sys/images/hs.jpg}"> 学生成绩管理系统</a>-->
+<!--    </div>-->
+<!--    <div class="left_open">-->
+<!--        <i title="展开左侧栏" class="iconfont">&#xe699;</i>-->
+<!--    </div>-->
+<!--    <ul class="layui-nav right" lay-filter="">-->
+<!--        <li class="layui-nav-item">-->
+<!--		    <a href="javascript:">当前用户：-->
+<!--		       <span th:text="${session.user.realName}"></span>-->
+<!--			   <img-->
+<!--                  th:src="@{/uploads/{filename}(filename=${session.user.photo})}"-->
+<!--                  th:if="${session.account!='admin'}"/> -->
+<!--			   <img-->
+<!--                  th:src="@{/Sys/images/my1.png}" -->
+<!--				  th:if="${session.user.username=='admin'}"/>-->
+<!--			</a>-->
+<!--            <dl class="layui-nav-child">-->
+<!--                &lt;!&ndash; 二级菜单 &ndash;&gt;-->
+<!--                <dd>-->
+<!--                    <a onclick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a>-->
+<!--                </dd>-->
+<!--                <dd>-->
+<!--                    <a th:href="loginView">切换帐号</a>-->
+<!--                </dd>-->
+<!--                <dd>-->
+<!--                    <a th:href="loginOut">退出</a>-->
+<!--                </dd>-->
+<!--            </dl>-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--</div>-->
+<!-- 顶部结束 -->
+<!-- 中部开始 -->
+<!-- 左侧菜单开始 -->
+<div class="sidebar">
+    <div class="logo">
+        <h1>智能考勤系统</h1>
+    </div>
+    <div id="side-nav" style="width: 100%;height: 57%">
+        <ul id="nav" class="nav-links">
+<!--            <a href="dashboard" class="active">-->
+            <a href="#" class="active" data-page="dashboard"  th:onclick="|loadFrame('dashboard', 'dashboard')|">
+                <i class="fas fa-home"></i>
+                <!--                    <i class="iconfont">&#xe726;</i>-->
+                <cite class="nav-text">仪表盘</cite>
+            </a>
+            <a href="#" data-page="students" th:onclick="|loadFrame('students', 'stuInfo_mf')|">
+                <i class="fas fa-user-graduate"></i>
+                <cite class="nav-text">学生管理</cite>
+            </a>
+            <a href="#" data-page="classes" th:onclick="|loadPageFragment('classes', 'classInfo_mf')|">
+                <i class="fas fa-chalkboard"></i>
+                <cite class="nav-text">班级管理</cite>
+            </a>
+            <a href="#" data-page="teachers" th:onclick="|loadPageFragment('teachers', 'teacherInfo_mf')|">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <cite class="nav-text">教师管理</cite>
+            </a>
+            <a href="#" data-page="courses" th:onclick="|loadPageFragment('courses', 'courseInfo_mf')|">
+                <i class="fas fa-book"></i>
+                <cite class="nav-text">课程管理</cite>
+            </a>
+            <a href="#" data-page="schedules" th:onclick="|loadPageFragment('schedules', 'scheduleInfo_mf')|">
+                <i class="fas fa-calendar-alt"></i>
+                <cite class="nav-text">课程安排</cite>
+            </a>
+            <a href="#" data-page="attendance" th:onclick="|loadFrame('attendance', 'attendance')|">
+                <i class="fas fa-clipboard-check"></i>
+                <cite class="nav-text">考勤记录</cite>
+            </a>
+            <a href="#" data-page="radar" th:onclick="|loadPageFragment('radar')|">
+                <i class="fas fa-wave-square"></i>
+                <cite class="nav-text">毫米波雷达</cite>
+            </a>
+            <a href="#" data-page="files" th:onclick="|loadPageFragment('files')|">
+                <i class="fas fa-folder-open"></i>
+                <cite class="nav-text">文件管理</cite>
+            </a>
+            <a href="#" data-page="settings" th:onclick="|loadPageFragment('settings')|">
+                <i class="fas fa-cog"></i>
+                <cite class="nav-text">系统设置</cite>
+            </a>
+<!--            <li th:if="${session.user.username!='admin'}">-->
+<!--&lt;!&ndash;                <a href="javascript:" th:href="stuInfo_mf">&ndash;&gt;-->
+<!--                <a _href="stuInfo_mf" class="active">-->
+<!--                    <i class="fas fa-home"></i>-->
+<!--&lt;!&ndash;                    <i class="iconfont">&#xe726;</i>&ndash;&gt;-->
+<!--                    <cite class="nav-text">仪表盘</cite>-->
+<!--                </a>-->
+<!--                <ul class="sub-menu">-->
+<!--                    <li>-->
+<!--                        <a th:href="stuInfo_mf">-->
+<!--                            <i class="iconfont">&#xe6a7;</i>-->
+<!--                            <cite>学生查询</cite>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li th:if="${session.user.identity!=2}">-->
+<!--                        <a _href="teacherInfo_mf">-->
+<!--                            <i class="iconfont">&#xe6a7;</i>-->
+<!--                            <cite>学生维护</cite>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </li>-->
+
+<!--		    &lt;!&ndash; 学生信息模块开始 &ndash;&gt;-->
+<!--            <li th:if="${session.user.username!='admin'}">-->
+<!--                <a href="javascript:">-->
+<!--                <i class="iconfont">&#xe726;</i>-->
+<!--                <cite>学生信息</cite>-->
+<!--                <i class="iconfont nav_right">&#xe697;</i>-->
+<!--                </a>-->
+<!--                <ul class="sub-menu">-->
+<!--                    <li>-->
+<!--                        <a th:href="stuInfo_mf">-->
+<!--                        <i class="iconfont">&#xe6a7;</i>-->
+<!--                        <cite>学生查询</cite>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li th:if="${session.user.identity!=2}">-->
+<!--                        <a _href="teacherInfo_mf">-->
+<!--                        <i class="iconfont">&#xe6a7;</i>-->
+<!--                        <cite>学生维护</cite>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--			&lt;!&ndash; 学生信息模块结束 &ndash;&gt;-->
+
+<!--		    &lt;!&ndash; 考勤信息模块开始 &ndash;&gt;-->
+<!--            <li th:if="${session.user.username!='admin'}">-->
+<!--                <a href="javascript:">-->
+<!--                <i class="iconfont">&#xe726;</i>-->
+<!--                <cite>考勤信息</cite>-->
+<!--                <i class="iconfont nav_right">&#xe697;</i>-->
+<!--                </a>-->
+<!--                <ul class="sub-menu">-->
+<!--                    <li>-->
+<!--                        <a _href="stuInfo_mf">-->
+<!--                        <i class="iconfont">&#xe6a7;</i>-->
+<!--                        <cite>考勤查询</cite>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li th:if="${session.user.identity!=2}">-->
+<!--                        <a _href="teacherInfo_mf">-->
+<!--                        <i class="iconfont">&#xe6a7;</i>-->
+<!--                        <cite>考勤维护</cite>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--			&lt;!&ndash; 考勤信息模块结束 &ndash;&gt;-->
+<!--			-->
+<!--		    &lt;!&ndash; 实验信息模块开始 &ndash;&gt;-->
+<!--            <li th:if="${session.user.username!='admin'}">-->
+<!--                <a href="javascript:">-->
+<!--                <i class="iconfont">&#xe726;</i>-->
+<!--                <cite>实验信息</cite>-->
+<!--                <i class="iconfont nav_right">&#xe697;</i>-->
+<!--                </a>-->
+<!--                <ul class="sub-menu">-->
+<!--                    <li>-->
+<!--                        <a _href="stuInfo_mf">-->
+<!--                        <i class="iconfont">&#xe6a7;</i>-->
+<!--                        <cite>实验信息查询</cite>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li th:if="${session.user.identity!=2}">-->
+<!--                        <a _href="teacherInfo_mf">-->
+<!--                        <i class="iconfont">&#xe6a7;</i>-->
+<!--                        <cite>实验信息维护</cite>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--			&lt;!&ndash; 实验信息模块结束 &ndash;&gt;			-->
+
+<!--		    &lt;!&ndash; 课堂信息模块开始 &ndash;&gt;-->
+<!--            <li th:if="${session.user.username!='admin'}">-->
+<!--                <a href="javascript:">-->
+<!--                <i class="iconfont">&#xe726;</i>-->
+<!--                <cite>课堂信息</cite>-->
+<!--                <i class="iconfont nav_right">&#xe697;</i>-->
+<!--                </a>-->
+<!--                <ul class="sub-menu">-->
+<!--                    <li>-->
+<!--                        <a _href="stuInfo_mf">-->
+<!--                        <i class="iconfont">&#xe6a7;</i>-->
+<!--                        <cite>课堂信息查询</cite>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li th:if="${session.user.identity!=2}">-->
+<!--                        <a _href="teacherInfo_mf">-->
+<!--                        <i class="iconfont">&#xe6a7;</i>-->
+<!--                        <cite>课堂信息维护</cite>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--			&lt;!&ndash; 课堂信息模块结束 &ndash;&gt;-->
+
+<!--		    &lt;!&ndash; 作业信息模块开始 &ndash;&gt;-->
+<!--            <li th:if="${session.user.username!='admin'}">-->
+<!--                <a href="javascript:">-->
+<!--                <i class="iconfont">&#xe726;</i>-->
+<!--                <cite>作业信息</cite>-->
+<!--                <i class="iconfont nav_right">&#xe697;</i>-->
+<!--                </a>-->
+<!--                <ul class="sub-menu">-->
+<!--                    <li>-->
+<!--                        <a _href="stuInfo_mf">-->
+<!--                        <i class="iconfont">&#xe6a7;</i>-->
+<!--                        <cite>作业信息查询</cite>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li th:if="${session.user.identity!=2}">-->
+<!--                        <a _href="teacherInfo_mf">-->
+<!--                        <i class="iconfont">&#xe6a7;</i>-->
+<!--                        <cite>作业信息维护</cite>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--			&lt;!&ndash; 作业信息模块结束 &ndash;&gt;			-->
+<!--            <li>-->
+<!--                <a href="javascript:">-->
+<!--                    <i class="iconfont layui-icon-extend-chengji"></i>-->
+<!--                    <cite>科目成绩管理</cite>-->
+<!--                    <i class="iconfont nav_right">&#xe697;</i>-->
+<!--                </a>-->
+<!--                <ul class="sub-menu">-->
+<!--                    <li>-->
+<!--                        <a _href="claCouScore">-->
+<!--                        <i class="iconfont">&#xe6a7;</i>-->
+<!--                        <cite>班级科目成绩</cite>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </li>-->
+
+<!--            <li>-->
+<!--                <a href="javascript:">-->
+<!--                    <i class="iconfont">&#xe6b8;</i>-->
+<!--                    <cite>统计</cite>-->
+<!--                    <i class="iconfont nav_right">&#xe697;</i>-->
+<!--                </a>-->
+<!--                <ul class="sub-menu">-->
+<!--                    <li>-->
+<!--                        <a _href="parseClaCouSco">-->
+<!--                            <i class="iconfont">&#xe6a7;</i>-->
+<!--                            <cite>班级科目成绩统计</cite>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a _href="parseClaComp">-->
+<!--                            <i class="iconfont">&#xe6a7;</i>-->
+<!--                            <cite>班级科目对比统计</cite>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            <li>-->
+        </ul>
+    </div>
+    <!--<div th:style="'background-image:url(./Sys/images/bg2.jpg); width:100%; height:43%;bottom: 0;background-repeat: no-repeat;'"></div>-->
+</div>
+<!-- <div class="x-slide_left"></div> -->
+<!-- 左侧菜单结束 -->
+<!-- 右侧主体开始 -->
+<div class="page-content">
+    <div class="header">
+        <div class="header-title">
+            <h2>系统仪表盘</h2>
+            <p>实时监控系统状态和传感器数据</p>
+        </div>
+        <div class="header-info">
+            <div class="status-badge">
+                <span class="status-indicator online" id="wifi-status"></span>
+                <span id="wifi-text">WiFi 已连接</span>
+            </div>
+            <div class="status-badge">
+                <span class="status-indicator online" id="mqtt-status"></span>
+                <span id="mqtt-text">MQTT 已连接</span>
+            </div>
+            <div class="status-badge">
+                <i class="fas fa-microchip"></i>
+                <span>CPU: <span id="cpu-usage">42%</span></span>
+            </div>
+            <div class="status-badge">
+                <i class="fas fa-memory"></i>
+                <span>内存: <span id="memory-usage">65%</span></span>
+            </div>
+        </div>
+    </div>
+
+<!--    <div class="main-content" lay-filter="xbs_tab" lay-allowclose="false">-->
+<!--        <ul class="layui-tab-title">-->
+<!--            <li class="home"><i class="layui-icon">&#xe68e;</i>我的桌面</li>-->
+<!--        </ul>-->
+
+<!--        <div class="layui-tab-content">-->
+<!--            <div class="layui-tab-item layui-show">-->
+<!--                <iframe th:src='@{welcome}' frameborder="0" scrolling="yes"-->
+<!--                        class="x-iframe"></iframe>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    &lt;!&ndash; 动态内容区域 &ndash;&gt;-->
+<!--    <div id="content" class="main-content">-->
+<!--        &lt;!&ndash; Thymeleaf 片段将在这里加载 &ndash;&gt;-->
+<!--        <div class="test" th:replace="old/dashboard :: dashboard"></div>-->
+<!--    </div>-->
+
+        <div class="main-content">
+            <div class="test">
+                <iframe id='x-iframe1'  style="width: 100%; height: 100%;" th:src='@{welcome}' frameborder="0" scrolling="yes"
+                        class="x-iframe"></iframe>
+            </div>
+        </div>
+<!--    </div>-->
+</div>
+<div class="page-content-bg"></div>
+<!-- 右侧主体结束 -->
+<!-- 中部结束 -->
+<!-- 底部开始 -->
+<div class="footer">
+    <div class="copyright" style="text-align: center;">Copyright WonderfulMorty</div>
+</div>
+<!-- 底部结束 -->
+<script>
+    //百度统计可去掉
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>

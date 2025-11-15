@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>课程信息管理</title>
+  <!-- 引入Layui核心样式 -->
+  <link rel="stylesheet" th:href="@{/layui/css/layui.css}">
+  <!-- 引入自定义样式 -->
+  <link rel="stylesheet" th:href="@{/Sys/css/style.css}">
+</head>
+<body>
+<div class="layui-card">
+  <div class="layui-card-header">
+    <div class="layui-row">
+      <div class="layui-col-md8">
+        <h3>课程信息管理</h3>
+      </div>
+      <div class="layui-col-md4">
+        <button class="layui-btn layui-btn-normal" id="addCourseBtn">
+          <i class="layui-icon">&#xe608;</i> 添加课程
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="layui-card-body">
+    <!-- 搜索表单 -->
+    <form class="layui-form layui-form-pane" lay-filter="searchForm">
+      <div class="layui-form-item">
+        <div class="layui-input-inline">
+          <input type="text" name="courseName" placeholder="课程名称" class="layui-input">
+        </div>
+        <div class="layui-input-inline">
+          <select name="teacherId">
+            <option value="">所有教师</option>
+            <!-- 后端动态加载教师列表 -->
+            <option th:each="teacher : ${teachers}" th:value="${teacher.id}" th:text="${teacher.name}"></option>
+          </select>
+        </div>
+        <button class="layui-btn" lay-submit lay-filter="search">查询</button>
+        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+      </div>
+    </form>
+
+    <!-- 课程表格 -->
+    <table class="layui-table" lay-size="sm" id="courseTable" lay-filter="courseTable"></table>
+  </div>
+</div>
+
+<!-- 引入Layui核心脚本 -->
+<script th:src="@{/layui/layui.js}"></script>
+<!-- 引入Axios -->
+<script th:src="@{/js/axios.min.js}"></script>
+<!-- 引入主脚本 -->
+<script th:src="@{/Sys/js/main.js}"></script>
+
+<script>
+  layui.use(['table', 'form', 'layer'], function() {
+    const table = layui.table;
+    const form = layui.form;
+    const layer = layui.layer;
+
+    // 渲染课程表格
+    const tableIns = table.render({
+      elem: '#courseTable',
+      url: '/course/course/list', // 后端接口路径
+      method: 'get',
+      page: true,
+      limit: 10,
+      limits: [10, 20, 30],
+      cols: [[
+        {type: 'checkbox', fixed: 'left'},
+        {field: 'id', title: '课程ID', width: 80, fixed: 'left'},
+        {field: 'courseName', title: '课程名称', width: 180},
+        {field: 'teacherName', title: '授课教师', width: 120},
+        {field: 'credit', title: '学分', width: 80},
+        {field: 'classHour', title: '课时', width: 80},
+        {field: 'status', title: '状态', width: 100,
+          templet: function(d) {
+            return d.status === 1 ? '<span class="layui-badge layui-bg-green">正常</span>' :
+                    '<span class="layui-badge layui-bg-red">已结课</span>';
+          }
+        },
+        {title: '操作', width: 200, align: 'center', fixed: 'right',
+          templet: function(d) {
+            return `
+                                <button class="layui-btn layui-btn-xs" onclick="courseEdit(${d.id})">编辑</button>
+                                <button class="layui-btn layui-btn-danger layui-btn-xs" onclick="courseDelete(${d.id})">删除</button>
+                            `;
+          }
+        }
+      ]]
+    });
+
+    // 搜索表单提交
+    form.on('submit(search)', function(data) {
+      tableIns.reload({
+        where: data.field,
+        page: {curr: 1}
+      });
+      return false;
+    });
+
+    // 添加课程按钮点击事件
+    document.getElementById('addCourseBtn').addEventListener('click', function() {
+      layer.open({
+        type: 2,
+        title: '添加课程',
+        skin: 'layui-layer-lan',
+        shadeClose: false,
+        shade: 0.8,
+        area: ['700px', '500px'],
+        content: '/course/course/add', // 新增页面路径
+        end: function() {
+          tableIns.reload(); // 关闭弹窗后刷新表格
+        }
+      });
+    });
+  });
+
+  // 编辑课程
+  function courseEdit(id) {
+    layer.open({
+      type: 2,
+      title: '编辑课程',
+      skin: 'layui-layer-lan',
+      shadeClose: false,
+      shade: 0.8,
+      area: ['700px', '500px'],
+      content: '/course/course/edit?id=' + id, // 编辑页面路径
+      end: function() {
+        layui.table.reload('courseTable');
+      }
+    });
+  }
+
+  // 删除课程
+  function courseDelete(id) {
+    layer.confirm('确定要删除该课程吗？', {icon: 3, title:'提示'}, function(index) {
+      axios.delete('/course/course/delete?id=' + id)
+              .then(response => {
+                if (response.data.success) {
+                  layer.msg('删除成功', {icon: 1});
+                  layui.table.reload('courseTable');
+                } else {
+                  layer.msg('删除失败：' + response.data.msg, {icon: 2});
+                }
+              })
+              .catch(error => {
+                layer.msg('请求失败', {icon: 2});
+                console.error(error);
+              });
+      layer.close(index);
+    });
+  }
+</script>
+</body>
+</html>
