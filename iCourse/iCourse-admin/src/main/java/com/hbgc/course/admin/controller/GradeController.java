@@ -19,6 +19,12 @@ public class GradeController {
     @Autowired
     private GradeService gradeService;
 
+    // 新增：班级管理主页面映射
+    @GetMapping("/classInfo_mf")
+    public String classInfoMain() {
+        return "classInfo_mf";
+    }
+
     /**
      * 分页查询班级列表
      */

@@ -20,6 +20,12 @@ public class CourseScheduleController {
     @Autowired
     private CourseScheduleService scheduleService;
 
+    // 新增：课程安排主页面映射
+    @GetMapping("/scheduleInfo_mf")
+    public String scheduleInfoMain() {
+        return "scheduleInfo_mf";
+    }
+
     /**
      * 分页查询课程安排列表
      */

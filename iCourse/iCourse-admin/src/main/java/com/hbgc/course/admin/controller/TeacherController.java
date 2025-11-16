@@ -19,6 +19,12 @@ public class TeacherController {
     @Autowired
     private TeacherService teacherService;
 
+    // 新增：教师管理主页面映射
+    @GetMapping("/teacherInfo_mf")
+    public String teacherInfoMain() {
+        return "teacherInfo_mf";
+    }
+
     /**
      * 分页查询教师列表
      */

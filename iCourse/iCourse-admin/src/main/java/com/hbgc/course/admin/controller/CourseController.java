@@ -19,6 +19,12 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
+    // 新增：课程管理主页面映射
+    @GetMapping("/courseInfo_mf")
+    public String courseInfoMain() {
+        return "courseInfo_mf";
+    }
+
     /**
      * 分页查询课程列表
      */
